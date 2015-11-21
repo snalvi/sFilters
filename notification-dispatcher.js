@@ -7,12 +7,13 @@ var twilioPhoneNumber = '+16474902221';
 var notificationDispatcher = {};
     
 notificationDispatcher.sendNotificationToUsers = function(message, users, timestamp) {
-    console.log('sendNotificationToUsers called with:' + message + ' Users:' + users.length + ' time:' + timestamp);
     var delta = timestamp - Date.now;
     //Past Event
     if(delta <= 0){
+        console.log('sendNotificationToUsers pastEvent called with:' + message + ' Users:' + users.length + ' time:' + timestamp);
         sendMessageToUsers(message, users);
     }else{
+        console.log('sendNotificationToUsers futureEvent called with:' + message + ' Users:' + users.length + ' time:' + timestamp + ' delta:' + delta);
         setTimeout(function () {
           sendMessageToUsers(message, users);
         }, delta);

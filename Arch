@@ -13,9 +13,13 @@ Y		sendNotificationToUsers ( msg, list, timestamp )
 Y		handleResonse
 
 	RESTful Server
+
+		createService
+			curl -X POST https://smsaas.herokuapp.com/services -H "Content-Type: application/json" -d '{"service":"fruitchaat"}'		
 Y		sendMsg ( msg, service )
-			curl -X POST https://smsaas.herokuapp.com/sendMsg -H "Content-Type: application/json" -d '{"msg":"hello education", "service":"education", "timestamp":1448134065291}'
-		sendToAll ( msg )
+			curl -X POST https://smsaas.herokuapp.com/sendMsg -H "Content-Type: application/json" -d '{"msg":"hello education", "service":"education", "timestamp":1448143454830}'
+Y		sendToAll ( msg )
+
 Y		subscribe [Phase X ]
 			curl -X POST https://smsaas.herokuapp.com/subscribe -H "Content-Type: application/json" -d '{"phoneNumber":"+14168797085", "service":"health"}'
 
