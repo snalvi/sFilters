@@ -1,9 +1,9 @@
 Classes
 	DataStore
-		addUser
-		getUsers
-		addUserToService
-		getUsersForService
+Y		addUser
+Y		getUsers
+Y		addUserToService
+Y		getUsersForService
 
 
 	NotificationDispatcher
@@ -16,7 +16,8 @@ Classes
 Y		sendMsg ( msg, service )
 			curl -X POST localhost:9000/sendMsg -H "Content-Type: application/json" -d '{"msg":"hello world", "service":"health"}'
 		sendToAll ( msg )
-		subscribe [Phase X ]
+Y		subscribe [Phase X ]
+			curl -X POST localhost:9000/subscribe -H "Content-Type: application/json" -d '{"name":"Curren", "service":"health"}'
 
 	Single Page JS
 		that has form to use sendMsg

@@ -27,6 +27,13 @@ app.post('/sendMsg', function (req, res) {
   res.send('POST request to the sendMsg');
 });
 
+app.post('/subscribe', function (req, res) {
+  console.log(req.body);
+  var body = req.body;
+  dataStore.addUserToService(body.service,body.name);
+  res.send('User subscribed');
+});
+
 
 ///TESTING APIS
 
@@ -35,10 +42,6 @@ app.get('/health', function(req, res) {
   res.send(users);
 });
 
-app.get('/healthSubscribe', function(req, res) {
-  dataStore.addUserToService('health','Curren');
-  res.send('Add curren to health');
-});
 
 
 
