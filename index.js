@@ -1,5 +1,6 @@
 var express     = require('express');
 var bodyParser  = require('body-parser');
+var xmlparser   = require('express-xml-bodyparser');
 var request     = require('request');
 var url         = require('url');
 var gzippo      = require('gzippo');
@@ -56,4 +57,4 @@ app.get('/health', function(req, res) {
 
 
 app.listen(process.env.PORT || 9000);
-app.use(gzippo.staticGzip( __dirname + '/app'));
+app.use(gzippo.staticGzip( __dirname + '/public'));
