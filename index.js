@@ -20,11 +20,19 @@ app.get('/users', function(req, res) {
 });
 
 app.post('/sendMsg', function (req, res) {
-  console.log(req.body);
+  var body = req.body;
+  console.log(body);
 
-  var message = 'Hey';
-  var users = dataStore.getUsers();
-  var sendTimeStamp = Date.now();
+  if(body.service){
+    var users = dataStore.getUsersForService(body.service);
+  }else{
+    var users = dataStore.getUsers();
+  }
+  
+  if(!body.timestamp){
+    body.timestamp = Date.now();
+  }
+
   notificationDispatcher.sendNotificationToUsers(message, users, sendTimeStamp)
   res.send('POST request to the sendMsg');
 });
@@ -52,7 +60,7 @@ app.post('/inboundsms', function (req, res) {
     
   }else{
     services = dataStore.getServices();
-    text = "Please response with one of the choices: " + _.initial(services).join(', ') + (_.size(services) > 1 ? ', or ' : '') + _.last(services);
+    text = "Please response with one of the choices: " + _.initial(services).join(', ') + (_.size(services) > 1 ? ' or ' : '') + _.last(services);
     res.send('<Response><Sms>' + text + '</Sms></Response>'); 
   }
             
