@@ -39,6 +39,13 @@ app.post('/subscribe', function (req, res) {
   res.send('User subscribed');
 });
 
+app.post('/inboundsms', function (req, res) {
+  console.log('received twilio msg');
+  var body = req.body;
+  console.log(body);
+  res.send('got msg brahs');
+});
+
 ///TESTING APIS
 app.get('/health', function(req, res) {
   var users = dataStore.getUsersForService('health');
