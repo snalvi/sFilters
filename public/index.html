@@ -1,7 +1,32 @@
 <html>
-<head>
+	<head>
+	  <meta charset="utf-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <title>SMSaaS</title>
+	  <meta name="description" content="">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+	  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+	  <link rel="stylesheet" href="app/app.css">
+	  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+	  <script src="bower_components/angular/angular.js"></script>
+	  <script src="bower_components/angular-route/angular-route.js"></script>
+	  <script src="app/app.js"></script>
+	  <script src="app/main/main.js"></script>
+	  <script src="app/push/push.js"></script>
+	  <script src="app/view1/view1.js"></script>
+	  <script src="app/services/connectionConfiguration.js"></script>
+	  <script src="app/services/services.js"></script>
 	</head>
-	<body>
-		SMS-aaS App
+
+	<body ng-app="myApp">
+	  <ul class="menu">
+	    <li><a href="#/main">Main</a></li>	
+	    <li><a href="#/push">Push</a></li>
+	  </ul>
+
+	  <div ng-view></div>
+
 	</body>
 </html>
