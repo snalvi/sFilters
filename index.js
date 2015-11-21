@@ -5,6 +5,8 @@ var url = require('url');
 var gzippo = require('gzippo');
 var _ = require('lodash-node');
 
+var dataStore = require('./data-store');
+
 
 var app = express();
 app.use(bodyParser.json()); // for parsing application/json
@@ -13,6 +15,11 @@ app.use(bodyParser.json()); // for parsing application/json
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', function(req, res) {
   res.send('hello world');
+});
+
+app.get('/users', function(req, res) {
+  var users = dataStore.getUsers();
+  res.send(users);
 });
 
 app.post('/sendMsg', function (req, res) {
