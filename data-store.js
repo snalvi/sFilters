@@ -12,10 +12,10 @@ dataStore.getUsers = function(service){
 	return users;
 }
 
-dataStore.addUserToService = function(service, name){
-	console.log('addUserToService called  ' + service + "    " + name);
+dataStore.addUserToService = function(service, phoneNumber){
+	console.log('addUserToService called  ' + service + "    " + phoneNumber);
 	var user = _.find(users, function(user) {
-	  return user.name === name;
+	  return user.phoneNumber === phoneNumber;
 	});
 	if(user){
 		user[service] = true;

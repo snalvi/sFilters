@@ -7,10 +7,10 @@ Y		getUsersForService
 
 
 	NotificationDispatcher
-		sendNotificationToUsers ( msg, list, timestamp )
+Y		sendNotificationToUsers ( msg, list, timestamp )
 
 	NotificationHandler [ Phase X ]
-
+Y		handleResonse
 
 	RESTful Server
 Y		sendMsg ( msg, service )

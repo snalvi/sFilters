@@ -32,7 +32,7 @@ app.post('/sendMsg', function (req, res) {
 app.post('/subscribe', function (req, res) {
   console.log(req.body);
   var body = req.body;
-  dataStore.addUserToService(body.service,body.name);
+  dataStore.addUserToService(body.service,body.phoneNumber);
   res.send('User subscribed');
 });
 
