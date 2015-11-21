@@ -21,7 +21,13 @@ dataStore.addUserToService = function(service, phoneNumber){
 	});
 	if(user){
 		user[service] = true;
-	};
+	} else {
+		var newUser = {};
+		newUser["phoneNumber"] = phoneNumber;
+		newUser[service] = true;
+		users.push(newUser);
+		console.log('new user created + ' + phoneNumber);
+	}
 
 }
 

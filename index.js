@@ -46,6 +46,7 @@ app.post('/inboundsms', function (req, res) {
   var service = body.Body;
   if ( service && dataStore.serviceExists(service)){
     dataStore.addUserToService(service, body.From);
+    console.log('registered :' + body.From + ' for ' + service);
     res.send('<Response><Sms>Successfully registered to ' + service + '</Sms></Response>'); 
     
   }else{

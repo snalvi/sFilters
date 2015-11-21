@@ -10,12 +10,7 @@ var users = [
 		"phoneNumber":"+14168797085",
 		"education": true
 
-	},
-	{
-		"name":"Sameer",
-		"phoneNumber":"+19059036583",
-		"health": true,
-	},
+	}
 ];
 
 
