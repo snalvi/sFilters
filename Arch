@@ -1,0 +1,33 @@
+Classes
+	DataStore
+		addUser
+		getUsers
+		addUserToService
+		getUsersForService
+
+
+	NotificationDispatcher
+		sendNotificationToUsers ( msg, list, timestamp )
+
+	NotificationHandler
+
+
+	RESTful Server
+		sendMsg ( msg, service )
+		sendToAll ( msg )
+		subscribe [Phase X ]
+
+	Single Page JS
+		that has form to use sendMsg
+		create Service [ Phase X ]
+
+
+
+Resources
+	User
+		Name
+		PhoneNumber
+		Subscriptions:[]
+
+
+
