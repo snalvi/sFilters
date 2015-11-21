@@ -42,7 +42,7 @@ app.post('/subscribe', function (req, res) {
 
 app.post('/sendMsg', function (req, res) {
   var body = req.body;
-  console.log('received sendMsg with body:');
+  console.log('sendMsg called with body:');
   console.log(body);
   var msg = body.msg;
   var timestamp = parseInt(body.timestamp) || Date.now();
@@ -55,6 +55,18 @@ app.post('/sendMsg', function (req, res) {
 
   notificationDispatcher.sendNotificationToUsers(msg, users, timestamp)
   res.send('POST request to the sendMsg');
+});
+
+app.post('/sendMsgToUser', function (req, res) {
+  var body = req.body;
+  console.log('sendMsgToUser with body:');
+  console.log(body);
+  var msg = body.msg;
+  var timestamp = parseInt(body.timestamp) || Date.now();
+  var phoneNumber = body.phoneNumber;
+
+  notificationDispatcher.sendNotificationToUser(msg, phoneNumber, timestamp)
+  res.send('POST request to the sendMsgToUser');
 });
 
 app.post('/inboundsms', function (req, res) {

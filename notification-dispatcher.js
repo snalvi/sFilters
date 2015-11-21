@@ -21,6 +21,21 @@ notificationDispatcher.sendNotificationToUsers = function(message, users, timest
     }
 };
 
+notificationDispatcher.sendNotificationToUser = function( message, phoneNumber, timestamp) {
+    var delta = timestamp - Date.now();
+    //Past Event
+    if(delta <= 0){
+        console.log('sendNotificationToUser pastEvent called with:' + message + ' phoneNumber:' + phoneNumber + ' time:' + timestamp);
+        sendMessage(phoneNumber, message);
+    }else{
+        console.log('sendNotificationToUser futureEvent called with:' + message + ' phoneNumber:' + phoneNumber + ' time:' + timestamp + ' delta:' + delta);
+        setTimeout(function () {
+          console.log('sendNotificationToUser futureEvent triggered');
+          sendMessage(phoneNumber, message);
+        }, delta);
+    }
+}
+
 var sendMessageToUsers = function(message, users){
     _.forEach(users, function(user) {
         sendMessage(user.phoneNumber, message);

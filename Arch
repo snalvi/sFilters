@@ -14,11 +14,16 @@ Y		handleResonse
 
 	RESTful Server
 
-		createService
-			curl -X POST https://smsaas.herokuapp.com/services -H "Content-Type: application/json" -d '{"service":"fruitchaat"}'		
-Y		sendMsg ( msg, service )
-			curl -X POST https://smsaas.herokuapp.com/sendMsg -H "Content-Type: application/json" -d '{"msg":"hello education", "service":"education", "timestamp":1448143454830}'
-Y		sendToAll ( msg )
+Y		createService
+			curl -X POST https://smsaas.herokuapp.com/services -H "Content-Type: application/json" -d '{"service":"fruitchaat"}'
+
+Y		sendMsg to list( msg, service, timestamp )
+			curl -X POST https://smsaas.herokuapp.com/sendMsg -H "Content-Type: application/json" -d '{"msg":"omg stacy sucka", "service":"health", "timestamp":1448149367709}'
+		If no service is specified it sends to all
+
+		sendMsg to person ( msg, phoneNumber, timestamp )
+			curl -X POST https://smsaas.herokuapp.com/sendMsg -H "Content-Type: application/json" -d '{"msg":"omg stacy oh hells now", "phoneNumber":"+19059036583", "timestamp":1448149367709}'
+
 
 Y		subscribe [Phase X ]
 			curl -X POST https://smsaas.herokuapp.com/subscribe -H "Content-Type: application/json" -d '{"phoneNumber":"+14168797085", "service":"health"}'
