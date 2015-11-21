@@ -21,6 +21,7 @@ app.get('/users', function(req, res) {
 
 app.post('/sendMsg', function (req, res) {
   var body = req.body;
+  console.log('received sendMsg with body:');
   console.log(body);
   var msg = body.msg;
   var timestamp = body.timestamp || Date.now();
