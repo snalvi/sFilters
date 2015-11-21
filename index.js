@@ -22,18 +22,16 @@ app.get('/users', function(req, res) {
 app.post('/sendMsg', function (req, res) {
   var body = req.body;
   console.log(body);
+  var msg = body.msg;
+  var timestamp = body.timestamp || Date.now();
 
   if(body.service){
     var users = dataStore.getUsersForService(body.service);
   }else{
     var users = dataStore.getUsers();
   }
-  
-  if(!body.timestamp){
-    body.timestamp = Date.now();
-  }
 
-  notificationDispatcher.sendNotificationToUsers(message, users, sendTimeStamp)
+  notificationDispatcher.sendNotificationToUsers(msg, users, timestamp)
   res.send('POST request to the sendMsg');
 });
 
