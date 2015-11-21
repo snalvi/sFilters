@@ -12,12 +12,6 @@ var notificationDispatcher = require('./notification-dispatcher');
 var app = express();
 app.use(bodyParser.json()); // for parsing application/json
 
-
-// respond with "hello world" when a GET request is made to the homepage
-app.get('/', function(req, res) {
-  res.send('hello world');
-});
-
 app.get('/users', function(req, res) {
   var users = dataStore.getUsers();
   res.send(users);
