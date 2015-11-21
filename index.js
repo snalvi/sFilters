@@ -39,8 +39,8 @@ app.post('/inboundsms', function (req, res) {
   console.log(req);
   var body = req.body;
   console.log(body);
-  response.header('Content-Type', 'text/xml');
-  response.send('<Response><Sms>The Saman Alvi Experience</Sms></Response>'); 
+  res.header('Content-Type', 'text/xml');
+  res.send('<Response><Sms>The Saman Alvi Experience</Sms></Response>'); 
             
 });
 
