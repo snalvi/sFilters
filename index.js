@@ -10,7 +10,7 @@ var dataStore = require('./data-store');
 var notificationDispatcher = require('./notification-dispatcher');
 
 var app = express();
-app.use(bodyParser.json()); // for parsing application/json
+// app.use(bodyParser.json()); // for parsing application/json
 app.use(xmlparser());
 
 app.get('/users', function(req, res) {
