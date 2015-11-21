@@ -14,10 +14,10 @@ Y		handleResonse
 
 	RESTful Server
 Y		sendMsg ( msg, service )
-			curl -X POST localhost:9000/sendMsg -H "Content-Type: application/json" -d '{"msg":"hello world", "service":"health"}'
+			curl -X POST https://smsaas.herokuapp.com/sendMsg -H "Content-Type: application/json" -d '{"msg":"hello education", "service":"education", "timestamp":1448134065291}'
 		sendToAll ( msg )
 Y		subscribe [Phase X ]
-			curl -X POST localhost:9000/subscribe -H "Content-Type: application/json" -d '{"phoneNumber":"+14168797085", "service":"health"}'
+			curl -X POST https://smsaas.herokuapp.com/subscribe -H "Content-Type: application/json" -d '{"phoneNumber":"+14168797085", "service":"health"}'
 
 	Single Page JS
 		that has form to use sendMsg
