@@ -34,9 +34,7 @@ app.post('/subscribe', function (req, res) {
   res.send('User subscribed');
 });
 
-
 ///TESTING APIS
-
 app.get('/health', function(req, res) {
   var users = dataStore.getUsersForService('health');
   res.send(users);
