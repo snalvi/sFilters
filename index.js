@@ -43,14 +43,17 @@ app.post('/inboundsms', function (req, res) {
   var body = req.body;
   console.log(body);
 
-  var service = body.Body;
+  var service = body.Body || "";
+  service = service.toLowerCase();
   if ( service && dataStore.serviceExists(service)){
     dataStore.addUserToService(service, body.From);
     console.log('registered :' + body.From + ' for ' + service);
     res.send('<Response><Sms>Successfully registered to ' + service + '</Sms></Response>'); 
     
   }else{
-    res.send('<Response><Sms>Please respond with ' + dataStore.getServices + '</Sms></Response>'); 
+    services = dataStore.getServices();
+    text = "Please response with one of the choices: " + _.initial(services).join(', ') + (_.size(services) > 1 ? ', or ' : '') + _.last(services);
+    res.send('<Response><Sms>' + text + '</Sms></Response>'); 
   }
             
 });
