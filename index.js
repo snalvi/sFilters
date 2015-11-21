@@ -1,12 +1,12 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var request = require('request');
-var url = require('url');
-var gzippo = require('gzippo');
-var _ = require('lodash-node');
+var express     = require('express');
+var bodyParser  = require('body-parser');
+var request     = require('request');
+var url         = require('url');
+var gzippo      = require('gzippo');
+var _           = require('lodash-node');
 
 var dataStore = require('./data-store');
-
+var notificationDispatcher = require('./notification-dispatcher');
 
 var app = express();
 app.use(bodyParser.json()); // for parsing application/json
@@ -24,6 +24,11 @@ app.get('/users', function(req, res) {
 
 app.post('/sendMsg', function (req, res) {
   console.log(req.body);
+
+  var message = 'Hey';
+  var users = dataStore.getUsers();
+  var sendTimeStamp = Date.now();
+  notificationDispatcher.sendNotificationToUsers(message, users, sendTimeStamp)
   res.send('POST request to the sendMsg');
 });
 
@@ -39,8 +44,6 @@ app.get('/healthSubscribe', function(req, res) {
   dataStore.addUserToService('health','Curren');
   res.send('Add curren to health');
 });
-
-
 
 
 app.listen(process.env.PORT || 9000);
