@@ -10,7 +10,7 @@ var dataStore = require('./data-store');
 var notificationDispatcher = require('./notification-dispatcher');
 
 var app = express();
-app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(xmlparser());
 
@@ -53,6 +53,7 @@ app.get('/health', function(req, res) {
 });
 
 
-
+console.log('Server started');
 app.listen(process.env.PORT || 9000);
 app.use(gzippo.staticGzip( __dirname + '/public'));
+
