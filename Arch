@@ -17,7 +17,7 @@ Y		sendMsg ( msg, service )
 			curl -X POST localhost:9000/sendMsg -H "Content-Type: application/json" -d '{"msg":"hello world", "service":"health"}'
 		sendToAll ( msg )
 Y		subscribe [Phase X ]
-			curl -X POST localhost:9000/subscribe -H "Content-Type: application/json" -d '{"name":"Curren", "service":"health"}'
+			curl -X POST localhost:9000/subscribe -H "Content-Type: application/json" -d '{"phoneNumber":"+14168797085", "service":"health"}'
 
 	Single Page JS
 		that has form to use sendMsg
@@ -33,3 +33,24 @@ Resources
 
 
 
+
+{ ToCountry: 'CA',
+ToState: 'ON',
+SmsMessageSid: 'SM2761d4088628878c54f252d83bbe6000',
+NumMedia: '0',
+ToCity: 'Toronto',
+FromZip: '',
+SmsSid: 'SM2761d4088628878c54f252d83bbe6000',
+FromState: 'ON',
+SmsStatus: 'received',
+FromCity: 'PICKERING',
+Body: 'Has',
+FromCountry: 'CA',
+To: '+16474902221',
+MessagingServiceSid: 'MG088bfd87aec6e19eb5269466fba3639b',
+ToZip: '',
+NumSegments: '1',
+MessageSid: 'SM2761d4088628878c54f252d83bbe6000',
+AccountSid: 'ACe62b50ff563a31a9ce8c79ab7ab29615',
+From: '+19059036583',
+ApiVersion: '2010-04-01' }

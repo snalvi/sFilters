@@ -38,11 +38,19 @@ app.post('/subscribe', function (req, res) {
 
 app.post('/inboundsms', function (req, res) {
   console.log('received twilio msg');
-  console.log(req);
+  res.header('Content-Type', 'text/xml');
+  
   var body = req.body;
   console.log(body);
-  res.header('Content-Type', 'text/xml');
-  res.send('<Response><Sms>The Saman Alvi Experience</Sms></Response>'); 
+
+  var service = body.Body;
+  if ( service && dataStore.serviceExists(service)){
+    dataStore.addUserToService(service, body.From);
+    res.send('<Response><Sms>Successfully registered to ' + service + '</Sms></Response>'); 
+    
+  }else{
+    res.send('<Response><Sms>Please respond with ' + dataStore.getServices + '</Sms></Response>'); 
+  }
             
 });
 

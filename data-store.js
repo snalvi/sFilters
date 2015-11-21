@@ -2,6 +2,8 @@ var _ = require('lodash-node');
 var existingUsers = require('./existing-users');
 
 var dataStore = {};
+
+var services = ["health", "education"];
 var users = existingUsers.concat([]);
 	
 dataStore.addUser = function(user){
@@ -29,4 +31,11 @@ dataStore.getUsersForService = function(service){
 	});
 }
 
+dataStore.getServices = function(){
+	return services;
+}
+
+dataStore.serviceExists = function(service){
+	return _.includes(services, service);
+}
 module.exports = dataStore;
