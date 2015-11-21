@@ -41,6 +41,7 @@ app.post('/subscribe', function (req, res) {
 
 app.post('/inboundsms', function (req, res) {
   console.log('received twilio msg');
+  console.log(req);
   var body = req.body;
   console.log(body);
   res.send('got msg brahs');
