@@ -28,5 +28,20 @@ app.post('/sendMsg', function (req, res) {
 });
 
 
+///TESTING APIS
+
+app.get('/health', function(req, res) {
+  var users = dataStore.getUsersForService('health');
+  res.send(users);
+});
+
+app.get('/healthSubscribe', function(req, res) {
+  dataStore.addUserToService('health','Curren');
+  res.send('Add curren to health');
+});
+
+
+
+
 app.listen(process.env.PORT || 9000);
 app.use(gzippo.staticGzip( __dirname + '/app'));

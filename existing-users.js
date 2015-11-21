@@ -2,17 +2,19 @@ var users = [
 	{
 		"name":"Saman",
 		"number":"+14163058030",
-		"subscriptions":[]
+		"health": true,
+		"education": true
 	},
 	{
 		"name":"Curren",
 		"number":"+14168797085",
-		"subscriptions":[]
+		"education": true
+
 	},
 	{
 		"name":"Sameer",
 		"number":"+19059036583",
-		"subscriptions":[]
+		"health": true,
 	},
 ];
 
