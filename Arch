@@ -9,11 +9,12 @@ Classes
 	NotificationDispatcher
 		sendNotificationToUsers ( msg, list, timestamp )
 
-	NotificationHandler
+	NotificationHandler [ Phase X ]
 
 
 	RESTful Server
 		sendMsg ( msg, service )
+			curl -X POST localhost:9000/sendMsg -H "Content-Type: application/json" -d '{"msg":"hello world", "service":"health"}'
 		sendToAll ( msg )
 		subscribe [Phase X ]
 

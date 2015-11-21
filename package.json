@@ -1,0 +1,23 @@
+{
+  "name": "SMSaaS",
+  "version": "1.0.0",
+  "description": "SMS as a Service for enabling Community mobilizers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:sameervohra/smsaas.git"
+  },
+  "author": "SA, CP, SV",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "gzippo": "^0.2.0",
+    "lodash-node": "^3.10.1",
+    "request": "^2.67.0",
+    "url": "^0.11.0"
+  }
+}
