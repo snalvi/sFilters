@@ -15,6 +15,7 @@ notificationDispatcher.sendNotificationToUsers = function(message, users, timest
     }else{
         console.log('sendNotificationToUsers futureEvent called with:' + message + ' Users:' + users.length + ' time:' + timestamp + ' delta:' + delta);
         setTimeout(function () {
+          console.log('sendNotificationToUsers futureEvent triggered');
           sendMessageToUsers(message, users);
         }, delta);
     }
@@ -33,8 +34,7 @@ var sendMessage = function(phoneNumber, message) {
         body: message
     }, function(err, responseData) {
         if (!err) {
-            console.log(responseData.from);
-            console.log(responseData.body);
+            console.log("sendMsg from:" + responseData.from + ' with msg: ' + responseData.body);
         } else {
             console.log("Twilio send error :( ", err);
         }
