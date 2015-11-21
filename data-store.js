@@ -41,6 +41,10 @@ dataStore.getServices = function(){
 	return services;
 }
 
+dataStore.addService = function(service){
+	services.push(service);
+}
+
 dataStore.serviceExists = function(service){
 	return _.includes(services, service);
 }

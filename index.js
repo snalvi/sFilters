@@ -20,6 +20,14 @@ app.get('/services', function(req, res) {
   res.send(services);
 });
 
+app.post('/services', function(req, res) {
+  var body = req.body;
+  console.log('received sendMsg with body:');
+  console.log(body);
+  var services = dataStore.addService(body.service);
+  res.send('Service created.');
+});
+
 app.get('/users', function(req, res) {
   var users = dataStore.getUsers();
   res.send(users);
