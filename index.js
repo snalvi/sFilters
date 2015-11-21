@@ -14,9 +14,22 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(xmlparser());
 
+
+app.get('/services', function(req, res) {
+  var services = dataStore.getServices();
+  res.send(services);
+});
+
 app.get('/users', function(req, res) {
   var users = dataStore.getUsers();
   res.send(users);
+});
+
+app.post('/subscribe', function (req, res) {
+  console.log(req.body);
+  var body = req.body;
+  dataStore.addUserToService(body.service,body.phoneNumber);
+  res.send('User subscribed');
 });
 
 app.post('/sendMsg', function (req, res) {
@@ -34,13 +47,6 @@ app.post('/sendMsg', function (req, res) {
 
   notificationDispatcher.sendNotificationToUsers(msg, users, timestamp)
   res.send('POST request to the sendMsg');
-});
-
-app.post('/subscribe', function (req, res) {
-  console.log(req.body);
-  var body = req.body;
-  dataStore.addUserToService(body.service,body.phoneNumber);
-  res.send('User subscribed');
 });
 
 app.post('/inboundsms', function (req, res) {
