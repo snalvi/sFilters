@@ -7,7 +7,7 @@ var twilioPhoneNumber = '+16474902221';
 var notificationDispatcher = {};
     
 notificationDispatcher.sendNotificationToUsers = function(message, users, timestamp) {
-    var delta = timestamp - Date.now;
+    var delta = timestamp - Date.now();
     //Past Event
     if(delta <= 0){
         console.log('sendNotificationToUsers pastEvent called with:' + message + ' Users:' + users.length + ' time:' + timestamp);
