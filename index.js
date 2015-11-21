@@ -11,8 +11,8 @@ var notificationDispatcher = require('./notification-dispatcher');
 
 var app = express();
 // app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded());
 app.use(xmlparser());
-app.user(bodyParser.urlencoded());
 
 app.get('/users', function(req, res) {
   var users = dataStore.getUsers();
