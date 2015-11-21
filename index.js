@@ -45,7 +45,7 @@ app.post('/sendMsg', function (req, res) {
   console.log('received sendMsg with body:');
   console.log(body);
   var msg = body.msg;
-  var timestamp = body.timestamp || Date.now();
+  var timestamp = parseInt(body.timestamp) || Date.now();
 
   if(body.service){
     var users = dataStore.getUsersForService(body.service);
