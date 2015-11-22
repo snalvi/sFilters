@@ -105,7 +105,7 @@ app.post('/inboundsms', function (req, res) {
     console.log('inboundsms tipRequest :' + body.From + ' tip: ' + tip["msg"]);
     text = tip["msg"];
     
-  } else if( value === "help"){
+  } else if( value === "hi"){
     text = getTipsMessage();
     console.log('inboundsms help :' + text);
   }
@@ -134,7 +134,7 @@ function getTipsMessage(){
 function getDefaultMessage(){
   var services = dataStore.getServices();
   var text = "Please respond with one of the choices: " + _.initial(services).join(', ') + (_.size(services) > 1 ? '\n' : '') + _.last(services);
-  var text = text + " or HELP for Self Service."
+  var text = text + " or Hi for Self Service."
   return text;
 }
 
