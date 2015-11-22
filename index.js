@@ -76,35 +76,36 @@ app.post('/sendMsgToUser', function (req, res) {
 });
 
 app.post('/inboundsms', function (req, res) {
-  console.log('received twilio msg');
-  res.header('Content-Type', 'text/xml');
-  
   var body = req.body;
+  
+  var text = getDefaultMessage();
+
+  var value = body.Body.toLowerCase().trim() || "";
+  console.log('inboundsms called with:' + value + ' and body:');
   console.log(body);
 
-  var text = getDefaultMessage();
-  
-  var value = body.Body.toLowerCase() || "";
   if(dataStore.serviceExists(value)){
     dataStore.addUserToService(service, body.From);
-    console.log('registered :' + body.From + ' for ' + service);
+    console.log('inboundsms registered :' + body.From + ' for ' + service);
     text = 'Successfully registered to ' + service; 
   } else if(dataStore.tipExists(value)){
+    console.log('inboundsms tipRequest :' + body.From + ' tip: ' + tips[value]["msg"]);
     var tips = dataStore.getTips();
     text = tips[value]["msg"];
     
   } else if( value === "help"){
-    var services = dataStore.getServices();
     text = "HELP cmds TODOOOOOO";
+    console.log('inboundsms help :' + text);
   }
 
+  res.header('Content-Type', 'text/xml');
   res.send(getFormattedTwillioResponse(text));
             
 });
 
 function getDefaultMessage(){
   var services = dataStore.getServices();
-  return "Please response with one of the choices: " + _.initial(services).join(', ') + (_.size(services) > 1 ? ' or ' : '') + _.last(services);
+  return "Please respond with one of the choices: " + _.initial(services).join(', ') + (_.size(services) > 1 ? ' or ' : '') + _.last(services);
   
 }
 
