@@ -4,6 +4,18 @@ angular.module('myApp').controller('broadcastMessageModalController', ['$scope',
     timestamp: Date.now()
   };
 
+  APIService.getLocations().then(function(data) {
+    var locations = [];
+    _.each(data.data, function(loc){
+      locations.push({
+        "id": loc,
+        "label": _.capitalize(loc)
+      })
+    });
+    $scope.locations = locations;
+  });
+
+
   $scope.selected = {
     item: $scope.items[0]
   };

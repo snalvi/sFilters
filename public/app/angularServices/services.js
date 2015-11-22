@@ -63,6 +63,16 @@ angular.module('myApp').factory('APIService', [ '$http', '$q',
 				};
 
 				return $http(request);
+			},
+			getLocations: function() {
+				var request = {
+					method: 'GET',
+					url: '/locations',
+					timeout: this.timeout,
+					data: {}
+				};
+
+				return $http(request);
 			}
 		};
 	}
