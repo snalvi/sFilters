@@ -2,6 +2,7 @@ $page-content-grey: #FAFAFA;
 $light-grey: #F0F0F0;
 $dark-grey: #DEDEDE;
 $dark-grey-2: #4F4F4F;
+$highlight-blue: #BCD2EE;
 
 html, body {
 	font-family: 'Droid Sans', sans-serif;
@@ -54,6 +55,8 @@ a {
 	}
 
 	.broadcast-groups {
+		margin-top: 20px;
+		min-height: 200px;
 
 		.img-circle {
 			cursor: pointer;
@@ -66,10 +69,15 @@ a {
 		    border-radius: 700px;
 		    -webkit-border-radius: 700px;
 		    -moz-border-radius: 700px;
+
+		    &:hover {
+		    	background-color: $highlight-blue;
+		    }
 		}
 
 		.broadcast-heading {
-			font-size: 14px;
+			margin-top: 10px;
+			font-size: 16px;
 			font-weight: 700;
 		}
 	}
