@@ -22,6 +22,11 @@ a {
     margin: 0 0 0 25px;
     font-weight: bold; }
 
+.tips-page {
+  background-color: #FAFAFA;
+  padding: 20px;
+  margin: 25px; }
+
 .single-service-page {
   background-color: #FAFAFA;
   padding: 20px;
@@ -31,6 +36,16 @@ a {
     font-family: 'Droid Sans', sans-serif;
     font-weight: 400;
     font-size: 1.1em; }
+  .single-service-page .broadcast-groups .img-circle {
+    cursor: pointer;
+    cursor: hand;
+    padding: 20px;
+    width: 170px;
+    height: 170px;
+    border: 1px solid #4F4F4F;
+    border-radius: 700px;
+    -webkit-border-radius: 700px;
+    -moz-border-radius: 700px; }
   .single-service-page .broadcast-groups .broadcast-heading {
     font-size: 14px;
     font-weight: 700; }
