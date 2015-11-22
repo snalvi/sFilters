@@ -93,8 +93,8 @@ app.post('/inboundsms', function (req, res) {
     console.log('inboundsms tipRequest :' + body.From + ' tip: ' + tips[value]["msg"]);
     text = tips[value]["msg"];
     
-  } else if( value === "help"){
-    text = "HELP cmds TODOOOOOO";
+  } else if( value === "tips"){
+    text = getTipsMessage();
     console.log('inboundsms help :' + text);
   }
 
@@ -103,9 +103,26 @@ app.post('/inboundsms', function (req, res) {
             
 });
 
+function getTipsMessage(){
+  var formattedTips = {};
+  var text = "";
+  var tips = dataStore.getTips();
+  _.each(tips, function(value, key){
+    formattedTips[value.service] = formattedTips[value.service] || [];
+    (formattedTips[value.service]).push(key);
+  });
+
+  _.each(formattedTips, function(value, key){
+    text = text + key + '\n  ' +  value.join(',') + '\n';
+  });
+
+  return "Please respond with one of the tip choices:\n" + text;
+
+}
+
 function getDefaultMessage(){
   var services = dataStore.getServices();
-  return "Please respond with one of the choices: " + _.initial(services).join(', ') + (_.size(services) > 1 ? ' or ' : '') + _.last(services);
+  return "Please respond with one of the choices: " + _.initial(services).join(', ') + (_.size(services) > 1 ? '\n' : '') + _.last(services);
 }
 
 function getFormattedTwillioResponse(msg){
