@@ -2,6 +2,10 @@
 
 Tips
 
+<div ng-repeat="tip in tips">
+  <p ng-click="goToServicePage(service)">{{tip.key}}</p>
+</div>
+
 <script type="text/ng-template" id="tipModal.html">
     <div class="modal-header">
         <h3 class="modal-title">Set Tip</h3>

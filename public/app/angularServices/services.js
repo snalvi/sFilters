@@ -44,6 +44,26 @@ angular.module('myApp').factory('APIService', [ '$http', '$q',
 
 				return $http(request);
 			},
+			getTips: function() {
+				var request = {
+					method: 'GET',
+					url: '/tips',
+					timeout: this.timeout,
+					data: {}
+				};
+
+				return $http(request);
+			},
+			createTip: function (data) {
+				var request = {
+					method: 'POST',
+					url: '/tips',
+					timeout: this.timeout,
+					data: data
+				};
+
+				return $http(request);
+			}
 		};
 	}
 ]);
