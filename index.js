@@ -134,7 +134,7 @@ function getTipsMessage(){
 function getDefaultMessage(){
   var services = dataStore.getServices();
   var text = "Please respond with one of the choices: \n - " + services.join('\n - ') ;
-  var text = text + " or Hi for Self Service."
+  var text = text + "\n\nor Hi for Self Service."
   return text;
 }
 
