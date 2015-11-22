@@ -31,19 +31,9 @@ a {
     font-family: 'Droid Sans', sans-serif;
     font-weight: 400;
     font-size: 1.1em; }
-  .single-service-page .button-containers .service-circle {
-    margin-top: 20px;
-    margin-left: 5px;
-    float: left;
-    width: 10px;
-    height: 10px;
-    background-color: #4F4F4F;
-    -webkit-border-radius: 50px;
-    border-radius: 50px; }
-  .single-service-page .button-containers .service-button {
-    width: 70%;
-    margin-top: 20px;
-    padding: 10px; }
+  .single-service-page .broadcast-groups .broadcast-heading {
+    font-size: 14px;
+    font-weight: 700; }
 
 .services-page {
   background-color: #FAFAFA;

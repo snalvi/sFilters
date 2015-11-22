@@ -47,23 +47,15 @@ a {
 		font-size: 1.1em;
 	}
 
-	.button-containers {
+	.broadcast-groups {
 
-		.service-circle {
-			margin-top: 20px;
-			margin-left: 5px;
-			float: left;
-			width: 10px;
-			height: 10px;
-			background-color: $dark-grey-2;
-			-webkit-border-radius: 50px;
-			border-radius: 50px;
+		.broadcast-group {
+
 		}
 
-		.service-button {
-			width: 70%;
-			margin-top: 20px;
-			padding: 10px;
+		.broadcast-heading {
+			font-size: 14px;
+			font-weight: 700;
 		}
 	}
 }

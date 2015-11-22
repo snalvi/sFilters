@@ -2,30 +2,30 @@
     <p class="page-header">{{service.serviceName}}</p>
     <p class="service-info-text">Step 2: Select the target market you want to notify or edit your tips</p>
 
-    <div class="button-containers text-center container">
-        <div class="broadcast-groups row">
-            <div class="col-lg-4 broadcast-group">
-              <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+    <div class="broadcast-groups text-center container">
+        <div class="row">
+            <div class="col-md-4 broadcast-group" ng-click="broadcastMessage()">
+              <img class="img-circle" src="../assets/announcement_icon.png" alt="Generic placeholder image" width="140" height="140">
 
-              <p>Group</p>
+              <p class="broadcast-heading">Group</p>
             </div>
 
-            <div class="col-lg-4 broadcast-group">
+            <div class="col-md-4 broadcast-group" ng-click="unicastMessage()">
               <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
 
-              <p>Individual</p>
+              <p class="broadcast-heading">Individual</p>
             </div>
 
-            <div class="col-lg-4 broadcast-group">
+            <div class="col-md-4 broadcast-group" ng-click="manageTips()">
               <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
 
-              <p>Manage Tips</p>
+              <p class="broadcast-heading">Manage Tips</p>
             </div>
         </div>
 
-        <button class="service-button" ng-click="broadcastMessage()">Send message to group</button>
+<!--         <button class="service-button" ng-click="broadcastMessage()">Send message to group</button>
         <button class="service-button" ng-click="unicastMessage()">Send message to individual</button>
-        <button class="service-button" ng-click="manageTips()">Manage Tips</button>
+        <button class="service-button" ng-click="manageTips()">Manage Tips</button> -->
     </div>
     <script type="text/ng-template" id="broadcastModal.html">
         <div class="modal-header">
