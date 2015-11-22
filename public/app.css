@@ -25,7 +25,12 @@ a {
 .tips-page {
   background-color: #FAFAFA;
   padding: 20px;
-  margin: 25px; }
+  margin: 25px;
+  min-height: 300px; }
+  .tips-page .edit {
+    cursor: pointer;
+    cursor: hand;
+    margin-left: 20px; }
 
 .single-service-page {
   background-color: #FAFAFA;
@@ -96,6 +101,17 @@ a {
       font-family: 'Droid Sans', sans-serif;
       font-weight: 400;
       font-size: 1.2em; }
+
+.modal-dialog .modal-header {
+  font-size: 1.5em; }
+.modal-dialog .modal-body label {
+  text-transform: uppercase; }
+.modal-dialog .modal-body input.form-control {
+  padding: 22px; }
+.modal-dialog .modal-footer .modal-positive-button {
+  font-size: 0.9em; }
+.modal-dialog .modal-footer .modal-negative-button {
+  font-size: 0.9em; }
 
 footer {
   position: absolute;

@@ -13,15 +13,17 @@
           <tr ng-repeat="tip in tips">
             <td>{{tip.key}}</td>
             <td>{{tip.msg}}</td>
-            <td><span ng-click="createTip(tip)">Edit</span></td>
+            <td><div class="glyphicon glyphicon-pencil edit center-text" ng-click="createTip(tip)"></div></td>
           </tr> 
-         
         </tbody>
       </table>
 
     <script type="text/ng-template" id="tipModal.html">
         <div class="modal-header">
-            <h3 class="modal-title">New Tip</h3>
+            <h3 class="modal-title">
+                <div ng-if="tip.msg">Edit Tip</div>
+                <div ng-if="!tip.msg">New Tip</div>
+            </h3>
         </div>
         <div class="modal-body">
             <form>
@@ -36,12 +38,15 @@
             </form>
         </div>
         <div class="modal-footer">
-            <button class="btn btn-lg btn-primary" type="button" ng-click="ok()">CREATE</button>
-            <button class="btn btn-lg btn-warning" type="button" ng-click="cancel()">DISMISS</button>
+            <button class="btn btn-lg btn-default modal-negative-button" type="button" ng-click="cancel()">DISMISS</button>
+            <button class="btn btn-lg btn-success modal-positive-button" type="button" ng-click="ok()">
+                <div ng-if="tip.msg">UPDATE</div>
+                <div ng-if="!tip.msg">NOTIFY</div>
+            </button>
         </div>
     </script>
 
-    <div class="service-button-container">
-        <button class="service-button btn-lg btn-success" ng-click="createTip()">CREATE</button>
+    <div class="service-button-container pull-right">
+        <button class="service-button btn btn-lg btn-success" ng-click="createTip(tip)">CREATE</button>
     </div>
 </div>
