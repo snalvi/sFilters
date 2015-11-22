@@ -41,9 +41,10 @@ dataStore.getUsersForServiceAndLocation = function(service, location){
 	});
 
 	if(location){
-		subscribedUsers = _.filter(subscribedUsers, function(user) {
-			return user[location] === location.toLowerCase();
+		var localUsers = _.filter(subscribedUsers, function(user) {
+			return user['location'] == location.toLowerCase();
 		});
+		subscribedUsers = localUsers;
 	}
 	return subscribedUsers;
 }

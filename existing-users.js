@@ -1,5 +1,6 @@
 var users = [
-	
+	{"phoneNumber":"+19059036583","education":true,"location":"pickering"},
+	{"phoneNumber":"+14168797085","education":true,"location":"toronto"}
 ];
 
 	// {
