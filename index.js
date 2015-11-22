@@ -82,8 +82,8 @@ app.post('/inboundsms', function (req, res) {
   var body = req.body;
   console.log(body);
 
-  var text = "Please response with one of the choices: " + _.initial(services).join(', ') + (_.size(services) > 1 ? ' or ' : '') + _.last(services);
-    
+  var text = getDefaultMessage();
+  
   var value = body.Body.toLowerCase() || "";
   if(dataStore.serviceExists(value)){
     dataStore.addUserToService(service, body.From);
@@ -101,6 +101,12 @@ app.post('/inboundsms', function (req, res) {
   res.send(getFormattedTwillioResponse(text));
             
 });
+
+function getDefaultMessage(){
+  var services = dataStore.getServices();
+  return "Please response with one of the choices: " + _.initial(services).join(', ') + (_.size(services) > 1 ? ' or ' : '') + _.last(services);
+  
+}
 
 
 function getFormattedTwillioResponse(msg){
