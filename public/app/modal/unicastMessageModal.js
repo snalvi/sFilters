@@ -3,6 +3,7 @@ angular.module('myApp').controller('unicastMessageModalController', ['$scope', '
   var currDate = Date.now();
   $scope.unicastMessage = {
     now: currDate,
+    receiver: 0,
     time: 0
   };
 
@@ -11,6 +12,10 @@ angular.module('myApp').controller('unicastMessageModalController', ['$scope', '
 
     console.log($scope.unicastMessage);
     $scope.unicastMessage.timestamp = $scope.unicastMessage.now + $scope.unicastMessage.time * 60000;
+    if ($scope.unicastMessage.receiver == 0) {
+      $scope.unicastMessage.phoneNumber = ""; //default it to empty if set to group
+    }
+    
     APIService.unicastMessage($scope.unicastMessage)
 
     $uibModalInstance.close();
