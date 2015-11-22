@@ -1,23 +1,23 @@
 <div class="single-service-page">
-    <p class="page-header">{{service.serviceName}}</p>
-    <p class="service-info-text">Step 2: Select the target market you want to notify or edit your tips</p>
+    <p class="page-header">{{service.serviceName | uppercase}}</p>
+    <p class="service-info-text">Select the target market you want to notify or edit your tips</p>
 
     <div class="broadcast-groups text-center container">
         <div class="row">
             <div class="col-md-4 broadcast-group" ng-click="broadcastMessage()">
-              <img class="img-circle" src="../assets/group2.png" alt="" width="140" height="140">
+              <img class="img-circle" src="../assets/group3.svg" alt="" width="140" height="140">
 
-              <p class="broadcast-heading">Group</p>
+              <p class="broadcast-heading">Notify Members</p>
             </div>
 
             <div class="col-md-4 broadcast-group" ng-click="unicastMessage()">
-              <img class="img-circle" src="../assets/single_person.png" alt="" width="140" height="140">
+              <img class="img-circle" src="../assets/reminder.svg" alt="" width="140" height="140">
 
-              <p class="broadcast-heading">Individual</p>
+              <p class="broadcast-heading">Reminder</p>
             </div>
 
             <div class="col-md-4 broadcast-group" ng-click="manageTips()">
-              <img class="img-circle" src="../assets/manage_tips.png" alt="Generic placeholder image" width="140" height="140">
+              <img class="img-circle" src="../assets/clipboard.svg" alt="" width="100" height="100">
 
               <p class="broadcast-heading">Manage Tips</p>
             </div>
@@ -56,7 +56,7 @@
 
     <script type="text/ng-template" id="unicastModal.html">
         <div class="modal-header">
-            <h3 class="modal-title">Notify Member</h3>
+            <h3 class="modal-title">Reminder</h3>
         </div>
         <div class="modal-body">
             <form>
