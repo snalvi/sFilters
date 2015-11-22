@@ -11,8 +11,8 @@ tips.Dentist = {
 }
 
 tips.Crops = {
-	"service": "Agriculture",
-	"msg": "Favorable Crops\n 1. Maize will do well despite drought warning.\n 2. Leafy greens demand to stay high."
+	"service": "Maize",
+	"msg": "Maize\n 1. Maize won't suffer due to upcoming drought.\n 2. Leafy greens complement Maize in integrated farming."
 }
 
 module.exports = tips;
