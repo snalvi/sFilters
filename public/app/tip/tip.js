@@ -32,6 +32,12 @@ angular.module('myApp.tip', ['ngRoute'])
                 tip: tip
             }
         });
+
+        modalInstance.result.then(function (selectedItem) {
+            updateTipList();
+        }, function () {
+            console.log("Create Tip modal cancelled")
+        });
     };
 
     function updateTipList() {
