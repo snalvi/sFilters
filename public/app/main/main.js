@@ -25,7 +25,7 @@ angular.module('myApp.main', ['ngRoute'])
 			animation: true,
 			templateUrl: 'createServiceModal.html',
 			controller: 'createServiceModalController',
-			size: "sm",
+			size: "lg",
 			resolve: {
 			    items: function () {
 			      	return $scope.items;

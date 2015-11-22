@@ -15,11 +15,14 @@
             <h3 class="modal-title">Create New Service</h3>
         </div>
         <div class="modal-body">
-            Name: <input type="text" ng-model="model.service" /><br/>
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1">Name</span>
+              <input type="text" ng-model="model.service" class="form-control" aria-describedby="sizing-addon1">
+            </div>
         </div>
         <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            <button class="btn btn-lg btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-lg btn-warning" type="button" ng-click="cancel()">Cancel</button>
         </div>
     </script>
 
