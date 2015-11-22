@@ -49,7 +49,9 @@ dataStore.addService = function(service){
 }
 
 dataStore.serviceExists = function(service){
-	return _.includes(services, service);
+	return _.any(services, function(s) {
+	  	return s.toLowerCase().trim() == service.toLowerCase().trim();
+	});
 }
 
 dataStore.getTips = function(){
