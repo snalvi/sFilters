@@ -119,10 +119,10 @@ function getTipsMessage(){
   });
 
   _.each(formattedTips, function(value, key){
-    text = text + key + '\n  ' +  value.join(',') + '\n';
+    text = text + '\n+ ' + key + '\n  - ' +  value.join('\n  - ');
   });
 
-  return "Please respond with one of the tip choices:\n" + text;
+  return "Please respond with one of the tip choices under each category:" + text;
 
 }
 
@@ -136,9 +136,8 @@ function getFormattedTwillioResponse(msg){
 }
 
 ///TESTING APIS
-app.get('/health', function(req, res) {
-  var users = dataStore.getUsersForService('health');
-  res.send(users);
+app.get('/test', function(req, res) {
+  res.send(getTipsMessage());
 });
 
 
