@@ -105,7 +105,7 @@ app.post('/inboundsms', function (req, res) {
     console.log('inboundsms tipRequest :' + body.From + ' tip: ' + tip["msg"]);
     text = tip["msg"];
     
-  } else if( value === "tips"){
+  } else if( value === "help"){
     text = getTipsMessage();
     console.log('inboundsms help :' + text);
   }
@@ -133,7 +133,9 @@ function getTipsMessage(){
 
 function getDefaultMessage(){
   var services = dataStore.getServices();
-  return "Please respond with one of the choices: " + _.initial(services).join(', ') + (_.size(services) > 1 ? '\n' : '') + _.last(services);
+  var text = "Please respond with one of the choices: " + _.initial(services).join(', ') + (_.size(services) > 1 ? '\n' : '') + _.last(services);
+  var text = text + " or HELP for Self Service."
+  return text;
 }
 
 function getFormattedTwillioResponse(msg){
