@@ -1,11 +1,14 @@
 var _ = require('lodash-node');
 var existingUsers = require('./existing-users');
+var existingTips = require('./tips');
+
 
 var dataStore = {};
 
 var services = ["health", "education"];
 var users = existingUsers.concat([]);
-	
+var tips = _.merge({}, existingTips);
+
 dataStore.addUser = function(user){
 	users.push(user);
 }
@@ -48,4 +51,13 @@ dataStore.addService = function(service){
 dataStore.serviceExists = function(service){
 	return _.includes(services, service);
 }
+
+dataStore.getTips = function(){
+	return tips;
+}
+
+dataStore.tipExists = function(tip){
+	return _.includes(tips, tip);
+}
+
 module.exports = dataStore;

@@ -28,6 +28,12 @@ app.post('/services', function(req, res) {
   res.send('Service created.');
 });
 
+app.get('/tips', function(req, res) {
+  var tips = dataStore.getTips();
+  res.send(tips);
+});
+
+
 app.get('/users', function(req, res) {
   var users = dataStore.getUsers();
   res.send(users);
@@ -76,20 +82,31 @@ app.post('/inboundsms', function (req, res) {
   var body = req.body;
   console.log(body);
 
-  var service = body.Body || "";
-  service = service.toLowerCase();
-  if ( service && dataStore.serviceExists(service)){
+  var text = "Please response with one of the choices: " + _.initial(services).join(', ') + (_.size(services) > 1 ? ' or ' : '') + _.last(services);
+    
+  var value = body.Body.toLowerCase() || "";
+  if(dataStore.serviceExists(value)){
     dataStore.addUserToService(service, body.From);
     console.log('registered :' + body.From + ' for ' + service);
-    res.send('<Response><Sms>Successfully registered to ' + service + '</Sms></Response>'); 
+    text = 'Successfully registered to ' + service; 
+  } else if(dataStore.tipExists(value)){
+    var tips = dataStore.getTips();
+    text = tips[value]["msg"];
     
-  }else{
-    services = dataStore.getServices();
-    text = "Please response with one of the choices: " + _.initial(services).join(', ') + (_.size(services) > 1 ? ' or ' : '') + _.last(services);
-    res.send('<Response><Sms>' + text + '</Sms></Response>'); 
+  } else if( value === "help"){
+    var services = dataStore.getServices();
+    text = "HELP cmds TODOOOOOO"
   }
+
+
+  res.send(getFormattedTwillioResponse(text));
             
 });
+
+
+function getFormattedTwillioResponse(msg){
+  res.send('<Response><Sms>' + msg + '</Sms></Response>');
+}
 
 ///TESTING APIS
 app.get('/health', function(req, res) {

@@ -21,8 +21,8 @@ Y		sendMsg to list( msg, service, timestamp )
 			curl -X POST https://smsaas.herokuapp.com/sendMsg -H "Content-Type: application/json" -d '{"msg":"omg stacy sucka", "service":"health", "timestamp":1448149367709}'
 		If no service is specified it sends to all
 
-		sendMsg to person ( msg, phoneNumber, timestamp )
-			curl -X POST https://smsaas.herokuapp.com/sendMsg -H "Content-Type: application/json" -d '{"msg":"omg stacy oh hells now", "phoneNumber":"+19059036583", "timestamp":1448149367709}'
+Y		sendMsg to person ( msg, phoneNumber, timestamp )
+			curl -X POST https://smsaas.herokuapp.com/sendMsgToUser -H "Content-Type: application/json" -d '{"msg":"omg stacy oh oh", "phoneNumber":"+19059036583", "timestamp":1448150133657}'
 
 
 Y		subscribe [Phase X ]
