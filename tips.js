@@ -1,18 +1,18 @@
 var tips = {};
 
-tips.Clinics = {
-	"service": "Health",
-	"msg": "Clinics\n 1. Foo Clinic - 123 Evergreen.\n 2. Bar Clinic - 123 SA Experience Blvd."
+tips.Vet = {
+	"service": "Cow",
+	"msg": "Local Vets\n 1. The Andys Vet Clinic - No. 46, Loresho Ridge.\n 2. Dr. Z. A. Cockar - P.O. Box 63838 Limuru Rd."
 };
 
-tips.Vaccine = {
+tips.Dentist = {
 	"service": "Health",
-	"msg": "Vaccine clinics\n 1. Place 1 on Aug 1.\n 2. Place 2 on Sept 3."
+	"msg": "Dr. Tim visitation schedule\n Aug 1st Kisaruni\n Aug4th Baraka"
 }
 
-tips.Weather = {
+tips.Crops = {
 	"service": "Agriculture",
-	"msg": "Weather\n 1. Heavy rain @ 4pm\n 2. Drough warning for Nov - Dec"
+	"msg": "Favorable Crops\n 1. Maize will do well despite drought warning.\n 2. Leafy greens demand to stay high."
 }
 
 module.exports = tips;

@@ -5,7 +5,7 @@ var existingTips = require('./tips');
 
 var dataStore = {};
 
-var services = ["Health", "Education", "Agriculture"];
+var services = ["COW", "NEWS"];
 var users = existingUsers.concat([]);
 var tips = _.merge({}, existingTips);
 
