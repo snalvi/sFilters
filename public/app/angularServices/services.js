@@ -1,23 +1,28 @@
 'use strict';
 
-angular.module('myApp').factory('APIService', [ '$http', 'ConnectionConfigurationService', '$q',
-	function($http, ConnectionConfigurationService, $q) {
+angular.module('myApp').factory('APIService', [ '$http', '$q',
+	function($http, $q) {
 		return {
 			timeout: 10000,
 			getServices: function () {
 				var request = {
 					method: 'GET',
-					url: ConnectionConfigurationService.BASE_NAME + '/services',
-					// headers: {'Access-Control-Allow-Origin': '*'},
+					url: '/services',
 					timeout: this.timeout,
 					data: {}
 				};
 
 				return $http(request);
-				// var services = ['Health', 'Agriculture'];
-				// var deferred = $q.defer();
-				// deferred.resolve(services);
-				// return deferred.promise;
+			},
+			broadcastMessage: function (data) {
+				var request = {
+					method: 'POST',
+					url: '/sendMsg',
+					timeout: this.timeout,
+					data: data
+				};
+
+				return $http(request);
 			},
 		};
 	}
@@ -26,7 +31,7 @@ angular.module('myApp').factory('APIService', [ '$http', 'ConnectionConfiguratio
 angular.module('myApp').factory('ServiceService',
 	function() {
 		var serviceObj = {
-			serviceName: ''
+			serviceName: 'health'
 		};
 
 		return {

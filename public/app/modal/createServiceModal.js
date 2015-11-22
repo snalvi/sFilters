@@ -1,5 +1,4 @@
-angular.module('myApp').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
-  console.log("muhuhahaha");
+angular.module('myApp').controller('createServiceModalController', function ($scope, $uibModalInstance, items) {
   $scope.items = items;
   $scope.selected = {
     item: $scope.items[0]

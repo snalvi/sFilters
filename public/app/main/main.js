@@ -26,7 +26,7 @@ angular.module('myApp.main', ['ngRoute'])
 		var modalInstance = $uibModal.open({
 			animation: false,
 			templateUrl: 'createServiceModal.html',
-			controller: 'ModalInstanceCtrl',
+			controller: 'createServiceModalController',
 			size: "sm",
 			resolve: {
 			    items: function () {
