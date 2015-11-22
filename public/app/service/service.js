@@ -37,7 +37,7 @@ angular.module('myApp.service', ['ngRoute'])
             animation: true,
             templateUrl: 'unicastModal.html',
             controller: 'unicastMessageModalController',
-            size: "sm",
+            size: "lg",
             resolve: {
                 items: function () {
                     return $scope.items;
