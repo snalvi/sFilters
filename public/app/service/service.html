@@ -8,15 +8,25 @@
     </div>
     <script type="text/ng-template" id="broadcastModal.html">
         <div class="modal-header">
-            <h3 class="modal-title">Send message to all members</h3>
+            <h3 class="modal-title">Notify Members</h3>
         </div>
         <div class="modal-body">
-            Message: <input type="text" ng-model="broadcastMessage.msg" /><br/>
-            Time: <input type="text" ng-model="broadcastMessage.timestamp" /><br/>
+            <form>
+              <div class="form-group">
+                <label for="formMsg">Message</label>
+                <input type="text" class="form-control" ng-model="broadcastMessage.msg" id="formMsg" >
+              </div>
+              <div class="form-group">
+                <label for="formTime">Scheduled Time</label>
+                <input type="text" class="form-control" ng-model="broadcastMessage.timestamp" id="formTime" >
+              </div>
+              
+            </form>
         </div>
+        
         <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            <button class="btn btn-primary btn-lg" type="button" ng-click="ok()">NOTIFY</button>
+            <button class="btn btn-warning btn-lg" type="button" ng-click="cancel()">DISMISS</button>
         </div>
     </script>
 

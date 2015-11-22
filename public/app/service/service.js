@@ -21,7 +21,7 @@ angular.module('myApp.service', ['ngRoute'])
             animation: true,
             templateUrl: 'broadcastModal.html',
             controller: 'broadcastMessageModalController',
-            size: "sm",
+            size: "lg",
             resolve: {
                 items: function () {
                     return $scope.items;
