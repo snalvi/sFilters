@@ -79,4 +79,9 @@ dataStore.getTip = function(tip) {
 	});
 }
 
+dataStore.getLocations = function(){
+	var locations = _.pluck(users, 'location');
+	return _.uniq(locations);
+}
+
 module.exports = dataStore;

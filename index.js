@@ -46,6 +46,11 @@ app.get('/users', function(req, res) {
   res.send(users);
 });
 
+app.get('/locations', function(req, res){
+  var locations = dataStore.getLocations();
+  res.send(locations);
+});
+
 app.post('/subscribe', function (req, res) {
   console.log(req.body);
   var body = req.body;
@@ -137,7 +142,7 @@ function getFormattedTwillioResponse(msg){
 
 ///TESTING APIS
 app.get('/test', function(req, res) {
-  res.send(getTipsMessage());
+  res.send(dataStore.getLocations());
 });
 
 
