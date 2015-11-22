@@ -2,13 +2,14 @@ var users = [
 	{
 		"name":"Curren",
 		"phoneNumber":"+14168797085",
-		"Education": true
-
+		"Education": true,
+		"location": "Toronto"
 	},
 	{
 		"name":"Sameer",
 		"phoneNumber":"+19059036583",
 		"Health": true,
+		"location": "Pickering"
 	},
 ];
 

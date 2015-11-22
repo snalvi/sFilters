@@ -92,7 +92,7 @@ app.post('/inboundsms', function (req, res) {
   console.log(body);
 
   if(dataStore.serviceExists(value)){
-    dataStore.addUserToService(value, body.From);
+    dataStore.addUserToService(value, body.From, body.FromCity);
     console.log('inboundsms registered : +' + body.From + ' for ' + value);
     text = 'Successfully registered to ' + value; 
   } else if(dataStore.tipExists(value)){

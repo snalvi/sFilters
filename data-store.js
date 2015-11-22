@@ -17,7 +17,7 @@ dataStore.getUsers = function(service){
 	return users;
 }
 
-dataStore.addUserToService = function(service, phoneNumber){
+dataStore.addUserToService = function(service, phoneNumber, location){
 	console.log('addUserToService called  ' + service + "    " + phoneNumber);
 	var user = _.find(users, function(user) {
 	  return user.phoneNumber === phoneNumber;
@@ -28,6 +28,7 @@ dataStore.addUserToService = function(service, phoneNumber){
 		var newUser = {};
 		newUser["phoneNumber"] = phoneNumber;
 		newUser[service] = true;
+		newUser["location"] = location.toLowerCase().trim();
 		users.push(newUser);
 		console.log('new user created + ' + phoneNumber);
 	}
