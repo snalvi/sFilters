@@ -133,7 +133,7 @@ function getTipsMessage(){
 
 function getDefaultMessage(){
   var services = dataStore.getServices();
-  var text = "Please respond with one of the choices: " + _.initial(services).join(', ') + (_.size(services) > 1 ? '\n' : '') + _.last(services);
+  var text = "Please respond with one of the choices: \n - " + services.join('\n - ') ;
   var text = text + " or Hi for Self Service."
   return text;
 }
