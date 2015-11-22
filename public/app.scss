@@ -7,6 +7,11 @@ html, body {
 	font-family: 'Droid Sans', sans-serif;
 }
 
+a {
+	text-decoration: none;
+}
+
+
 .header {
 	margin: 10px 0 0 10px;
 	font-size: 2.2em;
@@ -35,13 +40,27 @@ html, body {
 	padding: 20px;
 	margin: 25px;
 
+	.service-info-text {
+		margin-left: 25px;
+		font-family: 'Droid Sans', sans-serif;
+		font-weight: 400;
+		font-size: 1.1em;
+	}
+
 	.button-containers {
-		margin-left: auto;
-		margin-right: auto;
+
+		.service-circle {
+			margin-top: 20px;
+			margin-left: 5px;
+			float: left;
+			width: 10px;
+			height: 10px;
+			background-color: $dark-grey-2;
+			-webkit-border-radius: 50px;
+			border-radius: 50px;
+		}
 
 		.service-button {
-			margin-left: auto;
-			margin-right: auto;
 			width: 70%;
 			margin-top: 20px;
 			padding: 10px;

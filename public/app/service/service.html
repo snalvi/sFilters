@@ -1,7 +1,28 @@
 <div class="single-service-page">
     <p class="page-header">{{service.serviceName}}</p>
+    <p class="service-info-text">Step 2: Select the target market you want to notify or edit your tips</p>
 
-    <div class="button-containers">
+    <div class="button-containers text-center container">
+        <div class="broadcast-groups row">
+            <div class="col-lg-4 broadcast-group">
+              <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+
+              <p>Group</p>
+            </div>
+
+            <div class="col-lg-4 broadcast-group">
+              <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+
+              <p>Individual</p>
+            </div>
+
+            <div class="col-lg-4 broadcast-group">
+              <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+
+              <p>Manage Tips</p>
+            </div>
+        </div>
+
         <button class="service-button" ng-click="broadcastMessage()">Send message to group</button>
         <button class="service-button" ng-click="unicastMessage()">Send message to individual</button>
         <button class="service-button" ng-click="manageTips()">Manage Tips</button>
