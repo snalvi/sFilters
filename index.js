@@ -95,9 +95,8 @@ app.post('/inboundsms', function (req, res) {
     
   } else if( value === "help"){
     var services = dataStore.getServices();
-    text = "HELP cmds TODOOOOOO"
+    text = "HELP cmds TODOOOOOO";
   }
-
 
   res.send(getFormattedTwillioResponse(text));
             
@@ -105,7 +104,7 @@ app.post('/inboundsms', function (req, res) {
 
 
 function getFormattedTwillioResponse(msg){
-  res.send('<Response><Sms>' + msg + '</Sms></Response>');
+  return '<Response><Sms>' + msg + '</Sms></Response>';
 }
 
 ///TESTING APIS

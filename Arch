@@ -28,6 +28,11 @@ Y		sendMsg to person ( msg, phoneNumber, timestamp )
 Y		subscribe [Phase X ]
 			curl -X POST https://smsaas.herokuapp.com/subscribe -H "Content-Type: application/json" -d '{"phoneNumber":"+14168797085", "service":"health"}'
 
+		listTips
+			curl https://smsaas.herokuapp.com/tips -H "Content-Type: application/json"
+			
+		createTip
+
 	Single Page JS
 		that has form to use sendMsg
 		create Service [ Phase X ]
