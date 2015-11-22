@@ -122,7 +122,7 @@ function getTipsMessage(){
     text = text + '\n+ ' + key + '\n  - ' +  value.join('\n  - ');
   });
 
-  return "Please respond with one of the tip choices under each category:" + text;
+  return "Please respond with one of the choices under any category:" + text;
 
 }
 
