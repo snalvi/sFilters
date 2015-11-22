@@ -105,7 +105,7 @@ app.post('/inboundsms', function (req, res) {
     console.log('inboundsms tipRequest :' + body.From + ' tip: ' + tip["msg"]);
     text = tip["msg"];
     
-  } else if( value === "Apps"){
+  } else if( value == "apps"){
     text = getDefaultMessage();
     console.log('inboundsms Apps :' + text);
   }
