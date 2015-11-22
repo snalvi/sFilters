@@ -106,8 +106,7 @@ app.post('/inboundsms', function (req, res) {
   }
 
   res.header('Content-Type', 'text/xml');
-  res.send(getFormattedTwillioResponse(text));
-            
+  res.send(getFormattedTwillioResponse(text));            
 });
 
 function getTipsMessage(){
