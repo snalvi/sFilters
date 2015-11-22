@@ -89,8 +89,8 @@ app.post('/inboundsms', function (req, res) {
     console.log('inboundsms registered : +' + body.From + ' for ' + value);
     text = 'Successfully registered to ' + value; 
   } else if(dataStore.tipExists(value)){
-    console.log('inboundsms tipRequest :' + body.From + ' tip: ' + tips[value]["msg"]);
     var tips = dataStore.getTips();
+    console.log('inboundsms tipRequest :' + body.From + ' tip: ' + tips[value]["msg"]);
     text = tips[value]["msg"];
     
   } else if( value === "help"){
@@ -106,9 +106,7 @@ app.post('/inboundsms', function (req, res) {
 function getDefaultMessage(){
   var services = dataStore.getServices();
   return "Please respond with one of the choices: " + _.initial(services).join(', ') + (_.size(services) > 1 ? ' or ' : '') + _.last(services);
-  
 }
-
 
 function getFormattedTwillioResponse(msg){
   return '<Response><Sms>' + msg + '</Sms></Response>';
