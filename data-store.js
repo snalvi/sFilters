@@ -36,7 +36,7 @@ dataStore.addUserToService = function(service, phoneNumber){
 
 dataStore.getUsersForService = function(service){
 	return _.filter(users, function(user) {
-  		return user[service] === true;
+  		return user[service] === true || user[service.toLowerCase()] == true;
 	});
 }
 
@@ -49,9 +49,7 @@ dataStore.addService = function(service){
 }
 
 dataStore.serviceExists = function(service){
-	return _.any(services, function(s) {
-	  	return s.toLowerCase().trim() == service.toLowerCase().trim();
-	});
+	return _.includes(services, service);
 }
 
 dataStore.getTips = function(){
@@ -66,10 +64,7 @@ dataStore.addTip = function(key, msg, service){
 }
 
 dataStore.tipExists = function(tip){
-	return _.any(tips, function(v, k) {
-	  	return k.toLowerCase().trim() == tip.toLowerCase().trim();
-	});
-	// return !_.isUndefined(tips[tip]);
+	return !_.isUndefined(tips[tip]);
 }
 
 module.exports = dataStore;
