@@ -33,12 +33,9 @@
                 <label for="formMsg">Message</label>
                 <input type="text" class="form-control" ng-model="broadcastMessage.msg" id="formMsg" >
               </div>
-              <div class="form-group">
-                <label for="formTime">Scheduled Time</label>
-                <input type="text" class="form-control" ng-model="broadcastMessage.timestamp" id="formTime" >
-              </div>
 
               <div class="form-group">
+                <label for="formMsg">Community</label>
                 <select class="form-control" ng-model="broadcastMessage.location" ng-options="location.id as location.label for location in locations" required>
                 <option value="">All</option>
               </select>
