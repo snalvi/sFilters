@@ -1,5 +1,11 @@
-<div ng-repeat="service in services">
-  <p ng-click="goToServicePage(service)">{{service}}</p>
+
+<div class="service-table">
+    <div ng-repeat="service in services" class="service-row-container text-center hvr-underline-from-center">
+        <div class="service-row" ng-click="goToServicePage(service)">
+            <div class="col-md-1 glyphicon glyphicon-chevron-right" style="float: left"></div>
+            <div class="col-md-2" style="float: left">{{service}}</div>
+        </div>
+    </div>
 </div>
 
 <script type="text/ng-template" id="createServiceModal.html">
@@ -15,4 +21,6 @@
     </div>
 </script>
 
-<button ng-click="createService()">Create</button>
+<div class="service-button-container">
+    <button class="service-button btn btn-block btn-success" ng-click="createService()">CREATE</button>
+</div>
