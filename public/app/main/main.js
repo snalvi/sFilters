@@ -9,11 +9,15 @@ angular.module('myApp.main', ['ngRoute'])
   });
 }])
 
-.controller('MainCtrl', ['APIService', '$scope', function(APIService, $scope) {
+.controller('MainCtrl', ['APIService', 'ServiceService', '$scope', '$location', function(APIService, ServiceService, $scope, $location) {
 	APIService.getServices().then(function(data) {
-		$scope.services = data;
+		$scope.services = data.data;
 	});
 
-	console.log('services are: ', $scope.services);
+	$scope.goToServicePage = function(service) {
+		ServiceService.currentService.serviceName = service;
+		$location.path('push');
+	};
+
 	console.log('main control');
 }]);

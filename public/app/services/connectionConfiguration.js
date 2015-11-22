@@ -3,7 +3,7 @@
 angular.module('myApp').factory('ConnectionConfigurationService',
 	function() {
 		return {
-			BASE_NAME: 'https://localhost:9000'
+			BASE_NAME: 'http://localhost:9000'
 		};
 	}
 );
