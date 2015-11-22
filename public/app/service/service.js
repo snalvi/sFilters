@@ -46,19 +46,8 @@ angular.module('myApp.service', ['ngRoute'])
         });
     };
 
-    // $scope.manageTips = function() {
-    //     $scope.items = ['item1', 'item2', 'item3'];
-
-    //     var modalInstance = $uibModal.open({
-    //         animation: false,
-    //         templateUrl: 'createServiceModal.html',
-    //         controller: 'ModalInstanceCtrl',
-    //         size: "sm",
-    //         resolve: {
-    //             items: function () {
-    //                 return $scope.items;
-    //             }
-    //         }
-    //     });
-    // };
+    $scope.manageTips = function() {
+        console.log('manageTips');
+        $location.path('tip');
+    }
 }]);
