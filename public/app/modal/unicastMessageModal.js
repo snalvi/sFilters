@@ -12,12 +12,12 @@ angular.module('myApp').controller('unicastMessageModalController', ['$scope', '
 
     console.log($scope.unicastMessage);
     $scope.unicastMessage.timestamp = $scope.unicastMessage.now + $scope.unicastMessage.time * 60000;
-    if ($scope.unicastMessage.receiver == 0) {
-      $scope.unicastMessage.phoneNumber = ""; //default it to empty if set to group
+    if ($scope.unicastMessage.receiver == 0 || $scope.unicastMessage.receiver == "0") {
+      APIService.broadcastMessage($scope.unicastMessage);
+    } else {
+      APIService.unicastMessage($scope.unicastMessage);
     }
     
-    APIService.unicastMessage($scope.unicastMessage)
-
     $uibModalInstance.close();
   };
 
