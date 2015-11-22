@@ -90,7 +90,7 @@ app.post('/sendMsgToUser', function (req, res) {
 app.post('/inboundsms', function (req, res) {
   var body = req.body;
   
-  var text = getDefaultMessage();
+  var text = getTipsMessage();
 
   var value = body.Body.toLowerCase().trim() || "";
   console.log('inboundsms called with:' + value + ' and body:');
@@ -105,9 +105,9 @@ app.post('/inboundsms', function (req, res) {
     console.log('inboundsms tipRequest :' + body.From + ' tip: ' + tip["msg"]);
     text = tip["msg"];
     
-  } else if( value === "hi"){
-    text = getTipsMessage();
-    console.log('inboundsms help :' + text);
+  } else if( value === "Apps"){
+    text = getDefaultMessage();
+    console.log('inboundsms Apps :' + text);
   }
 
   res.header('Content-Type', 'text/xml');
@@ -127,7 +127,7 @@ function getTipsMessage(){
     text = text + '\n+ ' + key + '\n  - ' +  value.join('\n  - ');
   });
 
-  return "Please respond with one of the choices under any category:" + text;
+  return "Please respond with one of the choices under any category:" + text + '\n\nOR APPS for subscribing';
 
 }
 
