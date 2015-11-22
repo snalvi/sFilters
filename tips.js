@@ -10,8 +10,8 @@ tips.Dentist = {
 	"msg": "Dr. Tim visitation schedule\n Aug 1st Kisaruni\n Aug4th Baraka"
 }
 
-tips.Crops = {
-	"service": "Maize",
+tips.Maize = {
+	"service": "Crops",
 	"msg": "Maize\n 1. Maize won't suffer due to upcoming drought.\n 2. Leafy greens complement Maize in integrated farming."
 }
 
