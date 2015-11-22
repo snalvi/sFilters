@@ -31,7 +31,7 @@ Y		subscribe [Phase X ]
 Y		listTips
 			curl https://smsaas.herokuapp.com/tips -H "Content-Type: application/json"
 
-		createTip
+Y		createTip
 			curl -X POST https://smsaas.herokuapp.com/tips -H "Content-Type: application/json" -d '{"service":"agriculture", "key":"maize", "msg": "Ensure maize crops are sprayed for disease."}'
 
 	Single Page JS
