@@ -66,8 +66,8 @@ app.post('/sendMsg', function (req, res) {
   var timestamp = parseInt(body.timestamp) || Date.now();
 
   if(body.service){
-    var users = dataStore.getUsersForService(body.service);
-  }else{
+    var users = dataStore.getUsersForServiceAndLocation(body.service, body.location);
+  } else{
     var users = dataStore.getUsers();
   }
 

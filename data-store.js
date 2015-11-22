@@ -35,10 +35,17 @@ dataStore.addUserToService = function(service, phoneNumber, location){
 
 }
 
-dataStore.getUsersForService = function(service){
-	return _.filter(users, function(user) {
+dataStore.getUsersForServiceAndLocation = function(service, location){
+	var subscribedUsers = _.filter(users, function(user) {
   		return user[service] === true || user[service.toLowerCase()] == true;
 	});
+
+	if(location){
+		subscribedUsers = _.filter(subscribedUsers, function(user) {
+			return user[location] === location.toLowerCase();
+		});
+	}
+	return subscribedUsers;
 }
 
 dataStore.getServices = function(){
