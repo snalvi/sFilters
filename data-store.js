@@ -57,7 +57,7 @@ dataStore.getTips = function(){
 }
 
 dataStore.tipExists = function(tip){
-	return _.includes(tips, tip);
+	return !_.isUndefined(tips[tip]);
 }
 
 module.exports = dataStore;

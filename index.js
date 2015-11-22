@@ -86,8 +86,8 @@ app.post('/inboundsms', function (req, res) {
 
   if(dataStore.serviceExists(value)){
     dataStore.addUserToService(service, body.From);
-    console.log('inboundsms registered :' + body.From + ' for ' + service);
-    text = 'Successfully registered to ' + service; 
+    console.log('inboundsms registered :' + body.From + ' for ' + value);
+    text = 'Successfully registered to ' + value; 
   } else if(dataStore.tipExists(value)){
     console.log('inboundsms tipRequest :' + body.From + ' tip: ' + tips[value]["msg"]);
     var tips = dataStore.getTips();
