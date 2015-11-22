@@ -43,10 +43,10 @@ angular.module('myApp.tip', ['ngRoute'])
                 list.push(v) 
             });
 
-
             $scope.tips = _.filter(list, function(s){
                 return s.service.toLowerCase() == serviceToFilter.toLowerCase();
             });
+
         });
     }
 }]);

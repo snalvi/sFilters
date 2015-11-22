@@ -1,10 +1,23 @@
 <h2>{{service.serviceName}}</h2>
 
 Tips
-
-<div ng-repeat="tip in tips">
-  <p ng-click="createTip(tip)">{{tip.key}}</p>
-</div>
+<table class="table">
+    <thead>
+      <tr>
+        <th>Tip</th>
+        <th>Message</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="tip in tips">
+        <td>{{tip.key}}</td>
+        <td>{{tip.msg}}</td>
+        <td><span ng-click="createTip(tip)">Edit</span></td>
+      </tr> 
+     
+    </tbody>
+  </table>
 
 <script type="text/ng-template" id="tipModal.html">
     <div class="modal-header">
