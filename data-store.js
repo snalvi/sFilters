@@ -70,4 +70,10 @@ dataStore.tipExists = function(tip) {
 	// return !_.isUndefined(tips[tip]);
 }
 
+dataStore.getTip = function(tip) {
+	return _.find(tips, function(v, k) {
+	  	return k.toLowerCase().trim() == tip.toLowerCase().trim();
+	});
+}
+
 module.exports = dataStore;

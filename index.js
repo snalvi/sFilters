@@ -96,9 +96,9 @@ app.post('/inboundsms', function (req, res) {
     console.log('inboundsms registered : +' + body.From + ' for ' + value);
     text = 'Successfully registered to ' + value; 
   } else if(dataStore.tipExists(value)){
-    var tips = dataStore.getTips();
-    console.log('inboundsms tipRequest :' + body.From + ' tip: ' + tips[value]["msg"]);
-    text = tips[value]["msg"];
+    var tip = dataStore.getTip(value);
+    console.log('inboundsms tipRequest :' + body.From + ' tip: ' + tip["msg"]);
+    text = tip["msg"];
     
   } else if( value === "tips"){
     text = getTipsMessage();
