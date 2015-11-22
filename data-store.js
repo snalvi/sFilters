@@ -5,7 +5,7 @@ var existingTips = require('./tips');
 
 var dataStore = {};
 
-var services = ["health", "education"];
+var services = ["health", "education", "agriculture"];
 var users = existingUsers.concat([]);
 var tips = _.merge({}, existingTips);
 
@@ -54,6 +54,13 @@ dataStore.serviceExists = function(service){
 
 dataStore.getTips = function(){
 	return tips;
+}
+
+dataStore.addTip = function(key, msg, service){
+	tips[key] = {
+		"service": service,
+		"msg": msg
+	};
 }
 
 dataStore.tipExists = function(tip){

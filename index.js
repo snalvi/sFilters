@@ -33,6 +33,13 @@ app.get('/tips', function(req, res) {
   res.send(tips);
 });
 
+app.post('/tips', function(req, res) {
+  var body = req.body;
+  console.log('received tips with body:');
+  console.log(body);
+  var services = dataStore.addTip(body.key, body.msg, body.service);
+  res.send('Tip created.');
+});
 
 app.get('/users', function(req, res) {
   var users = dataStore.getUsers();
