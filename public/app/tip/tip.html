@@ -1,37 +1,39 @@
-<h2>{{service.serviceName}}</h2>
+<div class="tips-page">
+    <h2>{{service.serviceName}}</h2>
 
-<h4>Tips</h4>
-<table class="table">
-    <thead>
-      <tr>
-        <th>Tip</th>
-        <th>Message</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="tip in tips">
-        <td>{{tip.key}}</td>
-        <td>{{tip.msg}}</td>
-        <td><span ng-click="createTip(tip)">Edit</span></td>
-      </tr> 
-     
-    </tbody>
-  </table>
+    <h4>Tips</h4>
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Tip</th>
+            <th>Message</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="tip in tips">
+            <td>{{tip.key}}</td>
+            <td>{{tip.msg}}</td>
+            <td><span ng-click="createTip(tip)">Edit</span></td>
+          </tr> 
+         
+        </tbody>
+      </table>
 
-<script type="text/ng-template" id="tipModal.html">
-    <div class="modal-header">
-        <h3 class="modal-title">Set Tip</h3>
-    </div>
-    <div class="modal-body">
-        Key: <input type="text" ng-model="tip.key" /><br/>
-        Message: <input type="text" ng-model="tip.msg" /><br/>
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-    </div>
-</script>
+    <script type="text/ng-template" id="tipModal.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Set Tip</h3>
+        </div>
+        <div class="modal-body">
+            Key: <input type="text" ng-model="tip.key" /><br/>
+            Message: <input type="text" ng-model="tip.msg" /><br/>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
 
 
-<button ng-click="createTip()">Create</button>
+    <button ng-click="createTip()">Create</button>
+</div>
