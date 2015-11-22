@@ -11,7 +11,7 @@ angular.module('myApp.tip', ['ngRoute'])
 
 .controller('TipCtrl', ['APIService', 'ServiceService', '$scope', '$location', '$uibModal', function(APIService, ServiceService, $scope, $location, $uibModal) {
     $scope.service = ServiceService.currentService;
-    updateServiceList();
+    updateTipList();
 
 
     console.log('tip control');
@@ -32,9 +32,19 @@ angular.module('myApp.tip', ['ngRoute'])
         });
     };
 
-    function updateServiceList() {
+    function updateTipList() {
+        var serviceToFilter = ServiceService.currentService.serviceName;
         APIService.getTips().then(function(data) {
-            $scope.tips = data.data;
+            var list = [];
+            _.each(data.data, function(v,k) { 
+                v.key = k; 
+                list.push(v) 
+            });
+
+
+            $scope.tips = _.filter(list, function(s){
+                return s.service.toLowerCase() == serviceToFilter.toLowerCase();
+            });
         });
     }
 }]);
