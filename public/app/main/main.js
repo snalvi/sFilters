@@ -9,15 +9,30 @@ angular.module('myApp.main', ['ngRoute'])
   });
 }])
 
-.controller('MainCtrl', ['APIService', 'ServiceService', '$scope', '$location', function(APIService, ServiceService, $scope, $location) {
+.controller('MainCtrl', ['APIService', 'ServiceService', '$scope', '$location', '$uibModal', function(APIService, ServiceService, $scope, $location, $uibModal) {
 	APIService.getServices().then(function(data) {
 		$scope.services = data.data;
 	});
 
 	$scope.goToServicePage = function(service) {
 		ServiceService.currentService.serviceName = service;
-		$location.path('push');
+		console.log('service name: ', service);
+		$location.path('service');
 	};
 
-	console.log('main control');
+	$scope.createService = function() {
+		$scope.items = ['item1', 'item2', 'item3'];
+
+		var modalInstance = $uibModal.open({
+			animation: false,
+			templateUrl: 'createServiceModal.html',
+			controller: 'ModalInstanceCtrl',
+			size: "sm",
+			resolve: {
+			    items: function () {
+			      	return $scope.items;
+			    }
+		  	}
+		});
+	};
 }]);
