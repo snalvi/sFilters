@@ -24,6 +24,16 @@ angular.module('myApp').factory('APIService', [ '$http', '$q',
 
 				return $http(request);
 			},
+			unicastMessage: function (data) {
+				var request = {
+					method: 'POST',
+					url: '/sendMsgToUser',
+					timeout: this.timeout,
+					data: data
+				};
+
+				return $http(request);
+			},
 		};
 	}
 ]);

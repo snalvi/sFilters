@@ -30,6 +30,22 @@ angular.module('myApp.service', ['ngRoute'])
         });
     };
 
+    $scope.unicastMessage = function() {
+        $scope.items = ['item1', 'item2', 'item3'];
+
+        var modalInstance = $uibModal.open({
+            animation: false,
+            templateUrl: 'unicastModal.html',
+            controller: 'unicastMessageModalController',
+            size: "sm",
+            resolve: {
+                items: function () {
+                    return $scope.items;
+                }
+            }
+        });
+    };
+
     // $scope.unicastMessage = function() {
     //     $scope.items = ['item1', 'item2', 'item3'];
 
