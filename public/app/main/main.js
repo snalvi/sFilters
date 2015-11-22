@@ -10,9 +10,7 @@ angular.module('myApp.main', ['ngRoute'])
 }])
 
 .controller('MainCtrl', ['APIService', 'ServiceService', '$scope', '$location', '$uibModal', function(APIService, ServiceService, $scope, $location, $uibModal) {
-	APIService.getServices().then(function(data) {
-		$scope.services = data.data;
-	});
+	updateServiceList();
 
 	$scope.goToServicePage = function(service) {
 		ServiceService.currentService.serviceName = service;
@@ -24,7 +22,7 @@ angular.module('myApp.main', ['ngRoute'])
 		$scope.items = ['item1', 'item2', 'item3'];
 
 		var modalInstance = $uibModal.open({
-			animation: false,
+			animation: true,
 			templateUrl: 'createServiceModal.html',
 			controller: 'createServiceModalController',
 			size: "sm",
@@ -34,5 +32,17 @@ angular.module('myApp.main', ['ngRoute'])
 			    }
 		  	}
 		});
+
+		modalInstance.result.then(function (selectedItem) {
+			updateServiceList();
+	    }, function () {
+	      	console.log("Create service modal cancelled")
+	    });
 	};
+
+	function updateServiceList() {
+		APIService.getServices().then(function(data) {
+			$scope.services = data.data;
+		});
+	}
 }]);

@@ -18,7 +18,7 @@ angular.module('myApp.service', ['ngRoute'])
         $scope.items = ['item1', 'item2', 'item3'];
 
         var modalInstance = $uibModal.open({
-            animation: false,
+            animation: true,
             templateUrl: 'broadcastModal.html',
             controller: 'broadcastMessageModalController',
             size: "sm",
@@ -34,7 +34,7 @@ angular.module('myApp.service', ['ngRoute'])
         $scope.items = ['item1', 'item2', 'item3'];
 
         var modalInstance = $uibModal.open({
-            animation: false,
+            animation: true,
             templateUrl: 'unicastModal.html',
             controller: 'unicastMessageModalController',
             size: "sm",
@@ -45,22 +45,6 @@ angular.module('myApp.service', ['ngRoute'])
             }
         });
     };
-
-    // $scope.unicastMessage = function() {
-    //     $scope.items = ['item1', 'item2', 'item3'];
-
-    //     var modalInstance = $uibModal.open({
-    //         animation: false,
-    //         templateUrl: 'createServiceModal.html',
-    //         controller: 'ModalInstanceCtrl',
-    //         size: "sm",
-    //         resolve: {
-    //             items: function () {
-    //                 return $scope.items;
-    //             }
-    //         }
-    //     });
-    // };
 
     // $scope.manageTips = function() {
     //     $scope.items = ['item1', 'item2', 'item3'];

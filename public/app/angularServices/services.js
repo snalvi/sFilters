@@ -14,6 +14,16 @@ angular.module('myApp').factory('APIService', [ '$http', '$q',
 
 				return $http(request);
 			},
+			createService: function (data) {
+				var request = {
+					method: 'POST',
+					url: '/services',
+					timeout: this.timeout,
+					data: data
+				};
+
+				return $http(request);
+			},
 			broadcastMessage: function (data) {
 				var request = {
 					method: 'POST',
