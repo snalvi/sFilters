@@ -37,8 +37,15 @@
 	</head>
 
 	<body ng-app="myApp">
-		<p class="header">SMSaaS</p>
-		<div ng-view></div>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		  <div class="container">
+		    <div class="navbar-header navbar-brand">
+		    	<p class="header">SMSaaS</div>
+		    </div>
+		  </div>
+		</nav>
+
+		<div ng-view class="page"></div>
 	</body>
 
 	<footer class="center-text">Built with &#9825 in Toronto for the Breaking Poverty Hackathon</footer>

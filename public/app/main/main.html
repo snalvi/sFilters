@@ -1,26 +1,29 @@
+<div class="services-page">
 
-<div class="service-table">
-    <div ng-repeat="service in services" class="service-row-container text-center hvr-underline-from-center">
-        <div class="service-row" ng-click="goToServicePage(service)">
-            <div class="col-md-1 glyphicon glyphicon-chevron-right" style="float: left"></div>
-            <div class="col-md-2" style="float: left">{{service}}</div>
+    <div class="service-table">
+        <p class="service-info-text">Step 1: Select the service you would like to target</p>
+        <div ng-repeat="service in services" class="service-row-container text-center hvr-underline-from-center">
+            <div class="service-row" ng-click="goToServicePage(service)">
+                <div class="col-md-1 glyphicon glyphicon-chevron-right" style="float: left"></div>
+                <div class="col-md-2" style="float: left">{{service}}</div>
+            </div>
         </div>
     </div>
-</div>
 
-<script type="text/ng-template" id="createServiceModal.html">
-    <div class="modal-header">
-        <h3 class="modal-title">Create New Service</h3>
-    </div>
-    <div class="modal-body">
-        Name: <input type="text" ng-model="model.service" /><br/>
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-    </div>
-</script>
+    <script type="text/ng-template" id="createServiceModal.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Create New Service</h3>
+        </div>
+        <div class="modal-body">
+            Name: <input type="text" ng-model="model.service" /><br/>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
 
-<div class="service-button-container">
-    <button class="service-button btn btn-block btn-success" ng-click="createService()">CREATE</button>
+    <div class="service-button-container">
+        <button class="service-button btn btn-block btn-success" ng-click="createService()">CREATE</button>
+    </div>
 </div>

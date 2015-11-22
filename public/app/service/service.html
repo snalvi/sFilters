@@ -1,38 +1,38 @@
-<h2>{{service.serviceName}}</h2>
+<div class="single-service-page">
+    <p class="page-header">{{service.serviceName}}</p>
 
-
-
-<script type="text/ng-template" id="broadcastModal.html">
-    <div class="modal-header">
-        <h3 class="modal-title">Send message to all members</h3>
+    <div class="button-containers">
+        <button class="service-button" ng-click="broadcastMessage()">Send message to group</button>
+        <button class="service-button" ng-click="unicastMessage()">Send message to individual</button>
+        <button class="service-button" ng-click="manageTips()">Manage Tips</button>
     </div>
-    <div class="modal-body">
-        Message: <input type="text" ng-model="broadcastMessage.msg" /><br/>
-        Time: <input type="text" ng-model="broadcastMessage.timestamp" /><br/>
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-    </div>
-</script>
+    <script type="text/ng-template" id="broadcastModal.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Send message to all members</h3>
+        </div>
+        <div class="modal-body">
+            Message: <input type="text" ng-model="broadcastMessage.msg" /><br/>
+            Time: <input type="text" ng-model="broadcastMessage.timestamp" /><br/>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
 
 
-<script type="text/ng-template" id="unicastModal.html">
-    <div class="modal-header">
-        <h3 class="modal-title">Send message to one members</h3>
-    </div>
-    <div class="modal-body">
-        Phone Number: <input type="text" ng-model="unicastMessage.phoneNumber" /><br/>
-        Message: <input type="text" ng-model="unicastMessage.msg" /><br/>
-        Time: <input type="text" ng-model="unicastMessage.timestamp" /><br/>
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-    </div>
-</script>
-
-
-<button ng-click="broadcastMessage()">Send message to group</button>
-<button ng-click="unicastMessage()">Send message to individual</button>
-<button ng-click="manageTips()">Manage Tips</button>
+    <script type="text/ng-template" id="unicastModal.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Send message to one members</h3>
+        </div>
+        <div class="modal-body">
+            Phone Number: <input type="text" ng-model="unicastMessage.phoneNumber" /><br/>
+            Message: <input type="text" ng-model="unicastMessage.msg" /><br/>
+            Time: <input type="text" ng-model="unicastMessage.timestamp" /><br/>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+</div>
