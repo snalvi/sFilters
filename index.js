@@ -90,7 +90,7 @@ app.post('/sendMsgToUser', function (req, res) {
 app.post('/inboundsms', function (req, res) {
   var body = req.body;
   
-  var text = getTipsMessage();
+  var text = getDefaultMessage();
 
   var value = body.Body.toLowerCase().trim() || "";
   console.log('inboundsms called with:' + value + ' and body:');
@@ -99,15 +99,16 @@ app.post('/inboundsms', function (req, res) {
   if(dataStore.serviceExists(value)){
     dataStore.addUserToService(value, body.From, body.FromCity);
     console.log('inboundsms registered : +' + body.From + ' for ' + value);
-    text = 'Successfully registered to ' + value; 
+    text = 'You will now receive notifications for ' + value; 
   } else if(dataStore.tipExists(value)){
     var tip = dataStore.getTip(value);
     console.log('inboundsms tipRequest :' + body.From + ' tip: ' + tip["msg"]);
     text = tip["msg"];
     
-  } else if( value == "apps"){
+  } else if( value == "help!"){
     text = getDefaultMessage();
-    console.log('inboundsms Apps :' + text);
+      text = getTipsMessage();
+    console.log('inboundsms help :' + text);
   }
 
   res.header('Content-Type', 'text/xml');
@@ -124,17 +125,17 @@ function getTipsMessage(){
   });
 
   _.each(formattedTips, function(value, key){
-    text = text + '\n+ ' + key + '\n  - ' +  value.join('\n  - ');
+    text = text + '\n  - ' +  value.join('\n  - ');
   });
 
-  return "Please respond with one of the choices under any category:" + text + '\n\nOR APPS for subscribing';
+  return "Please respond with one of the choices:" + text;
 
 }
 
 function getDefaultMessage(){
   var services = dataStore.getServices();
   var text = "Please respond with one of the choices: \n - " + services.join('\n - ') ;
-  var text = text + "\n\nor Hi for Self Service."
+  var text = text + "\n\nor HELP! for Self Service."
   return text;
 }
 
