@@ -3,7 +3,7 @@
 Tips
 
 <div ng-repeat="tip in tips">
-  <p ng-click="goToServicePage(service)">{{tip.key}}</p>
+  <p ng-click="createTip(tip)">{{tip.key}}</p>
 </div>
 
 <script type="text/ng-template" id="tipModal.html">
@@ -11,9 +11,8 @@ Tips
         <h3 class="modal-title">Set Tip</h3>
     </div>
     <div class="modal-body">
-        Message: <input type="text" ng-model="tip.msg" /><br/>
         Key: <input type="text" ng-model="tip.key" /><br/>
-        Service: <input type="text" ng-model="tip.service" /><br/>
+        Message: <input type="text" ng-model="tip.msg" /><br/>
     </div>
     <div class="modal-footer">
         <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>

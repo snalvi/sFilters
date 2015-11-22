@@ -16,8 +16,9 @@ angular.module('myApp.tip', ['ngRoute'])
 
     console.log('tip control');
 
-    $scope.createTip = function() {
+    $scope.createTip = function(tip) {
         $scope.items = ['item1', 'item2', 'item3'];
+
 
         var modalInstance = $uibModal.open({
             animation: true,
@@ -27,7 +28,8 @@ angular.module('myApp.tip', ['ngRoute'])
             resolve: {
                 items: function () {
                     return $scope.items;
-                }
+                },
+                tip: tip
             }
         });
     };
