@@ -63,8 +63,11 @@ dataStore.addTip = function(key, msg, service){
 	};
 }
 
-dataStore.tipExists = function(tip){
-	return !_.isUndefined(tips[tip]);
+dataStore.tipExists = function(tip) {
+	return _.any(tips, function(v, k) {
+	  	return k.toLowerCase().trim() == tip.toLowerCase().trim();
+	});
+	// return !_.isUndefined(tips[tip]);
 }
 
 module.exports = dataStore;
