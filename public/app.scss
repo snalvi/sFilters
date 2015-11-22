@@ -1,0 +1,73 @@
+$light-grey: #F0F0F0;
+$dark-grey: #DEDEDE;
+
+html, body {
+	font-family: 'Droid Sans', sans-serif;
+}
+
+.header {
+	margin: 10px 0 0 10px;
+	font-size: 2.5em;
+	font-family: 'Droid Sans', sans-serif;
+	font-weight: 700;
+}
+
+.service-table {
+	margin-top: 25px;
+	margin-left: auto;
+	margin-right: auto;
+
+	.service-row-container {
+		cursor: pointer;
+		cursor: hand;
+		width: 70%;
+		padding: 15px 15px 0 15px;
+		background-color: $light-grey;
+		margin-left: auto;
+		margin-right: auto;
+		font-family: 'Droid Sans', sans-serif;
+		font-weight: 400;
+		font-size: 1.2em;
+		margin-top: 2px;
+
+		.service-row {
+			padding: 5px 0 18px 0;
+			width: 100%;
+			height: 50px;
+			text-transform: uppercase;
+
+			.service-item: {
+				float: left;
+			}
+		}
+	}
+}
+
+.service-button-container {
+	margin-top: 10px;
+	width: 100%;
+
+	.service-button {
+		width: 70%;
+		height: 50px;
+		margin: 0 auto;
+		font-family: 'Droid Sans', sans-serif;
+		font-weight: 400;
+		font-size: 1.2em;
+	}	
+}
+
+footer {
+	position : absolute;
+    bottom : 0;
+    height : 40px;
+    margin-top : 40px;
+    margin-left: 15px;
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 0.85em;
+}
+
+.hvr-underline-from-center {
+	display: block;
+	border: 1px;
+}
