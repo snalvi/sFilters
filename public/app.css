@@ -65,6 +65,8 @@ a {
   background-color: #FAFAFA;
   padding: 20px;
   margin: 25px; }
+  .services-page .time-options {
+    margin-left: 20px; }
   .services-page .service-table {
     margin-left: auto;
     margin-right: auto; }
