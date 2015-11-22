@@ -24,7 +24,7 @@ angular.module('myApp.tip', ['ngRoute'])
             animation: true,
             templateUrl: 'tipModal.html',
             controller: 'tipModalController',
-            size: "sm",
+            size: "lg",
             resolve: {
                 items: function () {
                     return $scope.items;
