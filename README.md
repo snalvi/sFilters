@@ -1,3 +1,3 @@
 take over the world ... ONE SMS AT A TIME!!!!!!! 
 
-Text 'MOM' for unbelievable amounts of fun
+Text 'MOM' for unbelievable amounts of fun to (647) 490-2221
