@@ -10,11 +10,13 @@ angular.module('myApp.main', ['ngRoute'])
 }])
 
 .controller('MainCtrl', ['APIService', 'ServiceService', '$scope', '$location', '$uibModal', function(APIService, ServiceService, $scope, $location, $uibModal) {
-	updateServiceList();
-
 	$scope.goToServicePage = function(service) {
 		ServiceService.currentService.serviceName = service;
 		$location.path('service');
+	};
+
+	$scope.goToPricing = function() {
+		$location.path('price');
 	};
 
 	$scope.createService = function() {
@@ -38,10 +40,4 @@ angular.module('myApp.main', ['ngRoute'])
 	      	console.log("Create service modal cancelled")
 	    });
 	};
-
-	function updateServiceList() {
-		APIService.getServices().then(function(data) {
-			$scope.services = data.data;
-		});
-	}
-}]);
+}]); 

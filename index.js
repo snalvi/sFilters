@@ -6,9 +6,6 @@ var url         = require('url');
 var gzippo      = require('gzippo');
 var _           = require('lodash-node');
 
-var dataStore = require('./data-store');
-var notificationDispatcher = require('./notification-dispatcher');
-
 var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());

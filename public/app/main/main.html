@@ -1,34 +1,10 @@
-<div class="services-page">
+Step 1. Choose a wedding date
+<br />
+Step 2. Contact Us
+<br />
+Step 3. We will work with you to customize your own snapchat filter
+<br />
+Step 4. Profit!
 
-    <div class="service-table">
-        <p class="service-info-text">Select the SMS App you would like to target</p>
-        <div ng-repeat="service in services" class="service-row-container text-center hvr-underline-from-center">
-            <div class="service-row" ng-click="goToServicePage(service)">
-                <div class="col-md-1 glyphicon glyphicon-chevron-right" style="float: left"></div>
-                <div class="col-md-2" style="float: left">{{service}}</div>
-            </div>
-        </div>
-    </div>
-
-    <script type="text/ng-template" id="createServiceModal.html">
-        <div class="modal-header">
-            <h3 class="modal-title">New SMS App</h3>
-        </div>
-        <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="formServiceName">Name</label>
-                <input type="text" class="form-control" ng-model="model.service" id="formServiceName" >
-              </div>
-            </form>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-lg btn-default modal-negative-button" type="button" ng-click="cancel()">DISMISS</button>
-            <button class="btn btn-lg btn-success modal-positive-button" type="button" ng-click="ok()">CREATE</button>
-        </div>
-    </script>
-
-    <div class="service-button-container">
-        <button class="service-button btn btn-block btn-success" ng-click="createService()">CREATE</button>
-    </div>
-</div>
+<br />
+<button ng-click="goToPricing()">See Prices</button>

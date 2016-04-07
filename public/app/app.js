@@ -7,6 +7,7 @@ angular.module('myApp', [
   'ui.bootstrap',
   'myApp.main',
   'myApp.service',
+  'myApp.price',
   'myApp.tip'
 ]).
 config(['$routeProvider', function($routeProvider) {
