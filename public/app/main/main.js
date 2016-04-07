@@ -14,7 +14,6 @@ angular.module('myApp.main', ['ngRoute'])
 
 	$scope.goToServicePage = function(service) {
 		ServiceService.currentService.serviceName = service;
-		console.log('service name: ', service);
 		$location.path('service');
 	};
 
