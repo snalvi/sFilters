@@ -3,9 +3,11 @@ $light-grey: #F0F0F0;
 $dark-grey: #DEDEDE;
 $dark-grey-2: #4F4F4F;
 $highlight-blue: #BCD2EE;
+$aqua: #cceedd;
 
 html, body {
 	font-family: 'News Cycle', sans-serif;
+	colour: $aqua;
 }
 
 a {
@@ -33,6 +35,14 @@ a {
 		margin: 0 0 0 25px;
 		font-weight: bold;
 	}
+}
+
+.title-dotted-border { 
+	background: url('assets/dotted.png') repeat-x center; 
+}
+
+.title-center {
+	text-align: center;
 }
 
 .tips-page {
