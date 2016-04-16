@@ -4,6 +4,7 @@ $dark-grey: #DEDEDE;
 $dark-grey-2: #4F4F4F;
 $highlight-blue: #BCD2EE;
 $aqua: #cceedd;
+$aqua-dark: #8cd9b1;
 
 html, body {
 	font-family: 'News Cycle', sans-serif;
@@ -37,126 +38,28 @@ a {
 	}
 }
 
-.title-dotted-border { 
-	background: url('assets/dotted.png') repeat-x center; 
+.aqua-dark {
+	color: $aqua-dark;
 }
 
-.title-center {
-	text-align: center;
+.aqua {
+	color: $aqua;
 }
 
-.tips-page {
-	background-color: $page-content-grey;
-	padding: 20px;
-	margin: 25px;
-	min-height: 300px;
-
-	.edit {
-		cursor: pointer;
-		cursor: hand;
-		margin-left: 20px;
+.fancy-border {
+	.dotted-border {
+		background: url('assets/dotted.png') repeat-x center; 
+		display: inline-block;
+		width: 34%;
+		height: 20px;
 	}
-}
-
-.single-service-page {
-	background-color: $page-content-grey;
-	padding: 20px;
-	margin: 25px;
-
-	.service-info-text {
-		margin-left: 25px;
+	.fancy-title {
+		display: inline-block;
+		width: 25%;
+		height: 20px;
+		text-align: center;
+		font-style: bold;
 		font-family: 'Droid Sans', sans-serif;
-		font-weight: 400;
-		font-size: 1.1em;
-	}
-
-	.broadcast-groups {
-		margin-top: 20px;
-		min-height: 200px;
-
-		.img-circle {
-			cursor: pointer;
-			cursor: hand;
-
-			padding: 20px;
-		    width: 170px;
-		    height: 170px;
-		    border: 1px solid $dark-grey-2;
-		    border-radius: 700px;
-		    -webkit-border-radius: 700px;
-		    -moz-border-radius: 700px;
-
-		    &:hover {
-		    	background-color: $highlight-blue;
-		    }
-		}
-
-		.broadcast-heading {
-			margin-top: 10px;
-			font-size: 16px;
-			font-weight: 700;
-		}
-	}
-}
-
-.services-page {
-	background-color: $page-content-grey;
-	padding: 20px;
-	margin: 25px;
-
-	.time-options {
-		margin-left: 20px;
-	}
-
-	.service-table {
-		margin-left: auto;
-		margin-right: auto;
-
-		.service-info-text {
-			margin-left: 25px;
-			font-family: 'Droid Sans', sans-serif;
-			font-weight: 400;
-			font-size: 1.1em;
-		}
-
-		.service-row-container {
-			cursor: pointer;
-			cursor: hand;
-			width: 70%;
-			padding: 15px 15px 0 15px;
-			background-color: $light-grey;
-			margin-left: auto;
-			margin-right: auto;
-			font-family: 'Droid Sans', sans-serif;
-			font-weight: 400;
-			font-size: 1.2em;
-			margin-top: 2px;
-
-			.service-row {
-				padding: 5px 0 18px 0;
-				width: 100%;
-				height: 50px;
-				text-transform: uppercase;
-
-				.service-item: {
-					float: left;
-				}
-			}
-		}
-	}
-
-	.service-button-container {
-		margin-top: 25px;
-		width: 100%;
-
-		.service-button {
-			width: 70%;
-			height: 50px;
-			margin: 0 auto;
-			font-family: 'Droid Sans', sans-serif;
-			font-weight: 400;
-			font-size: 1.2em;
-		}	
 	}
 }
 
