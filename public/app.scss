@@ -13,6 +13,14 @@ html, body {
 
 a {
 	text-decoration: none;
+
+	&:hover {
+		text-decoration: none !important;
+	}
+}
+
+.container {
+	height: 85px;
 }
 
 .header {
@@ -20,10 +28,13 @@ a {
 	font-size: 2.2em;
 	font-weight: 700;
 	font-family: 'Parisienne', cursive;
-}
-
-.container {
-	height: 85px;
+	
+	a {
+		&:hover {
+			text-decoration: none !important;
+			color: green;
+		}
+	}
 }
 
 .page {
@@ -40,22 +51,31 @@ a {
 
 .aqua-dark {
 	color: $aqua-dark;
+
+	&:hover {
+		text-decoration: none !important;
+		color: black;
+	}
 }
 
 .aqua {
 	color: $aqua;
+
+	&:hover {
+		color: black !important;
+	}
 }
 
-.fancy-border {
+.fancy-title {
 	.dotted-border {
 		background: url('assets/dotted.png') repeat-x center; 
 		display: inline-block;
-		width: 34%;
+		width: 38%;
 		height: 20px;
 	}
-	.fancy-title {
+	.header {
 		display: inline-block;
-		width: 25%;
+		width: 20%;
 		height: 20px;
 		text-align: center;
 		font-style: bold;
@@ -87,16 +107,6 @@ a {
 			font-size: 0.9em;
 		}
 	}	
-}
-
-
-footer {
-	position : absolute;
-    height : 40px;
-    margin-top : 40px;
-    margin-left: 15px;
-    font-family: 'Droid Sans', sans-serif;
-    font-size: 0.85em;
 }
 
 .hvr-underline-from-center {
