@@ -9,6 +9,8 @@ angular.module('myApp.price', ['ngRoute'])
   });
 }])
 
-.controller('PriceCtrl', ['APIService', 'ServiceService', '$scope', '$location', '$uibModal', function(APIService, ServiceService, $scope, $location, $uibModal) {
-
+.controller('PriceCtrl', ['$scope', '$location', function($scope, $location) {
+	$scope.goToContact = function() {
+		$location.path('contact');
+	};
 }]); 

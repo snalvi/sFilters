@@ -6,9 +6,8 @@ angular.module('myApp', [
   'ngAnimate',
   'ui.bootstrap',
   'myApp.main',
-  'myApp.service',
   'myApp.price',
-  'myApp.tip'
+  'myApp.contact'
 ]).
 config(['$routeProvider', function($routeProvider) {
 	$routeProvider.otherwise({redirectTo: '/main'});
