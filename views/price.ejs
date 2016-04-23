@@ -1,0 +1,43 @@
+<%- include partials/page-start.ejs %>
+
+<div class="intro-text">
+  <p>Choose the package that best reflects your wedding. Our designers will work with you to determine your colours, your theme, and vision to better determine what is necessary to build your design.</p>
+</div>
+
+<% var fancyTitleContent= 'Step 2. Select Your Package'; %>
+<%- include partials/fancy-title.ejs %>
+
+<section id="plans">
+  <div class="container">
+    <div class="row">
+      <% var priceboxOpts = {
+          title: 'Simple Reminder',
+          cost: '$50',
+          description: 'Single Filter',
+          revisions: 'Customized Design',
+          cssStyle: 'package1'
+      } %>
+      <%- include partials/price-box.ejs %>
+
+      <% var priceboxOpts = {
+          title: 'Starlit Sky',
+          cost: '$60',
+          description: 'Three Filters',
+          revisions: 'Up to 3 revisions',
+          cssStyle: 'package2'
+      } %>
+      <%- include partials/price-box.ejs %>
+
+      <% var priceboxOpts = {
+          title: 'Walk to Remember',
+          cost: '$70',
+          description: 'Five Filters',
+          revisions: 'Up to 5 revisions',
+          cssStyle: 'package3'
+      } %>
+      <%- include partials/price-box.ejs %>                    
+    </div>
+  </div>
+</section>
+
+<%- include partials/page-end.ejs %>

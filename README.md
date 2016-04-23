@@ -1,1 +1,3 @@
-filters poc
+Installation:
+- npm install
+- nodemon index.js

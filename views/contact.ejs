@@ -1,0 +1,35 @@
+<%- include partials/page-start.ejs %>
+
+<div class="intro-text">
+  <p>We respond within 24 hours of your request to reach out and setup a time to have a call and place your order.</p>
+</div>
+
+<% var fancyTitleContent= 'Step 3. We will Get In Touch'; %>
+<%- include partials/fancy-title.ejs %>
+
+<form action="/order-submit" method="post" class="text-center col-md-12">
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 form-control-label">Email</label>
+    <div class="col-sm-6">
+      <input name="email" type="email" class="form-control" id="inputEmail3" placeholder="Email">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputName" class="col-sm-2 form-control-label">Name</label>
+    <div class="col-sm-6">
+      <input name="name" type="text" class="form-control" id="inputName" placeholder="Name">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="comment" class="col-sm-2 form-control-label">Comment</label>
+    <div class="col-sm-6">
+      <input name="comment" type="text" class="form-control" id="comment" placeholder="Comment">
+    </div>
+  </div>
+
+  <input type="submit" class="btn btn-default col-sm-8" value="Send">
+</form>
+
+<%- include partials/page-end.ejs %>
