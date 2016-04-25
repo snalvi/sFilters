@@ -1584,6 +1584,10 @@ body {
     padding: 40px;
 }
 
+h2 {
+    margin-bottom: 30px;
+}
+
 #awd-site-logo {
     float: none;
     display: table;
