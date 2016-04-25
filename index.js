@@ -33,6 +33,18 @@ app.get('/faq.html', function (req, res) {
   res.render('faq');
 });
 
+app.get('/contact.html', function (req, res) {
+  res.render('contact');
+});
+
+app.get('/contact-error.html', function (req, res) {
+  res.render('contact-error');
+});
+
+app.get('/contact-success.html', function (req, res) {
+  res.render('contact-success');
+});
+
 app.get('/order.html', function (req, res) {
   res.render('order');
 });
@@ -46,6 +58,31 @@ app.get('/order-error.html', function (req, res) {
 });
 
 app.post('/order-submit', function (req, res) {
+  sendEmail(res, req.body.email, req.body.message, "Order from " + req.body.name,
+    function() {
+      res.redirect('../order-complete.html');
+    }, 
+    function(err) {
+      console.log("ERROR!!!!");
+      res.redirect('../order-error.html');
+    })
+});
+
+app.post('/send-message', function (req, res) {
+  sendEmail(res, req.body.email, req.body.message, "Enquiry from " + req.body.name,
+    function() {
+      res.redirect('../contact-success.html');
+    }, 
+    function(err) {
+      console.log("ERROR!!!!");
+      res.redirect('../contact-error.html');
+    })
+});
+
+app.listen(process.env.PORT || 9000);
+app.use(gzippo.staticGzip( __dirname + '/public'));
+
+function sendEmail(res, email, message, subject, successCallback, errorCallback) {
   var smtpTrans = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -55,22 +92,17 @@ app.post('/order-submit', function (req, res) {
   });
 
   var mailOpts = {
-    from: 'Order Completion',
     to: 'snapchatgeof@gmail.com',
-    subject: 'Order from ' + req.body.name,
-    replyTo: req.body.email,
-    text: req.body.message
+    subject: subject,
+    replyTo: email,
+    text: message
   };
 
   smtpTrans.sendMail(mailOpts, function (error, response) {
     if (error) {
-      console.log("ERROR!!!!");
-      res.redirect('../order-error.html');
+      errorCallback(error);
     } else {
-      res.redirect('../order-complete.html');
+      successCallback();
     }
   });
-});
-
-app.listen(process.env.PORT || 9000);
-app.use(gzippo.staticGzip( __dirname + '/public'));
+}
