@@ -1595,6 +1595,10 @@ h2 {
     margin-bottom: 30px;
 }
 
+.user-feedback {
+    margin-top: 10%;
+}
+
 #awd-site-logo {
     float: none;
     display: table;
