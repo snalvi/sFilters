@@ -1,10 +1,10 @@
-<% var websiteTitle= 'SnapWedding'; %>
+<% var websiteTitle= ''; %>
 <%- include partials/page-start.ejs %>
 
 <div class="svm  col-sm-offset-0 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
     <div class="row">
         <div class="col-sm-offset-1 col-sm-4 hidden-xs svm text-right">
-            <img class="image" src="assets/img/black-iphone.png" width="100%"/>
+            <%- include partials/iphone-scroller.ejs %>
         </div>
         <div class="col-sm-6 svm">
             <div class="text-left text-xs-center text-sm-left">
@@ -19,13 +19,11 @@
                 </p>
 
                 <div class="visible-xs">
-                    <div class="col-xs-12">
-                        <img class="image" src="assets/img/black-iphone.png" width="100%"/>
-                    </div>
+                    <%- include partials/iphone-scroller.ejs %>
                 </div>
 
-                <a href="order.html" class="btn btn-inverse go-slide animated" data-animation="fadeIn" data-animation-delay="60" data-slide="subscribe">Order Now for $49</a>
-                <a href="faq.html" class="btn go-slide animated" data-animation="fadeIn" data-animation-delay="60" data-slide="subscribe">FAQ</a>
+                <a href="order.html" class="btn btn-inverse animated" data-animation="fadeIn" data-animation-delay="60" data-slide="subscribe">Order Now for $49</a>
+                <a href="faq.html" class="btn animated" data-animation="fadeIn" data-animation-delay="60" data-slide="subscribe">FAQ</a>
             </div>
         </div>
     </div>

@@ -1599,6 +1599,60 @@ h2 {
     margin-top: 10%;
 }
 
+#iphone-container {
+    position: relative;
+    vertical-align: initial;
+}
+
+#iphone-image {
+    display: block;
+}
+
+.filter-container {
+    /*background-color: rgba(0, 0, 256, 0.5);*/
+    overflow: hidden;
+    position: absolute;
+    top: 17.1%;
+    bottom: 14.3%;
+    left: 8.4%;
+    right: 7.6%;
+}
+
+@-webkit-keyframes slideshow {
+  0%    { left: 0; }
+  
+  20%   { left: 0; }
+  25%   { left: -100%; }
+  
+  45%   { left: -100%; }
+  50%   { left: -200%; }
+
+  70%   { left: -200%; }
+  75%   { left: -300%; }
+
+  95%   { left: -300%; }
+  100%  { left: -400%; }
+}
+
+@moz-keyframes slideshow {
+  0%    { left: 0; }
+  100%  { left: -200%; }
+}
+
+.filter-images {
+  opacity: 0.9;
+  background: url(../img/filters.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 500%;
+  -webkit-animation: slideshow 9s linear infinite;
+  -moz-animation:    slideshow 9s linear infinite;
+}
+
 #awd-site-logo {
     float: none;
     display: table;
@@ -1628,12 +1682,20 @@ h2 {
     margin-bottom: 40px;
 }
 
+.btn {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
 @media (max-width: 768px) {
     .btn {
         margin-bottom: 10px;
     }
 
-    .image {
+    #iphone-container {
         margin-bottom: 30px;
     }
 
