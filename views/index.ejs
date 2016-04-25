@@ -1,25 +1,34 @@
-<% var websiteTitle= 'Snapchat GeoFilters'; %>
+<% var websiteTitle= 'SnapWedding'; %>
 <%- include partials/page-start.ejs %>
 
-<div class="intro-text">
-  <p>Weddings are a time of joy and cheer, and are a reflection of the people whose lives are about to be built together. We understand this and want to work with you to create snapchat filters for your wedding that represent your message, your life, and most importantly, you.</p>
+<div class="svm  col-sm-offset-0 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-4 hidden-xs svm text-right">
+            <img class="image" src="assets/img/black-iphone.png" width="100%"/>
+        </div>
+        <div class="col-sm-6 svm">
+            <div class="text-left text-xs-center text-sm-left">
+                <!-- START TITLE -->
+                <h2 class="text-default animated" data-animation="fadeIn" data-animation-delay="50">
+                    Show the world your Special Day!
+                </h2>
+                <!-- END TITLE -->
+                <p class="animated" data-animation="fadeIn" data-animation-delay="55">
+                    Inspire friends & family to share snaps of your beautiful wedding
+                    with custom Snapchat filters
+                </p>
 
-  <br />
-  <p>Our consultants and designers work to determine your theme, and create a filter designed for your wedding in particular. We offer revisions to make sure you are delivered a product catered to you for your special day.</p>
-</div>
+                <div class="visible-xs">
+                    <div class="col-xs-12">
+                        <img class="image" src="assets/img/black-iphone.png" width="100%"/>
+                    </div>
+                </div>
 
-<% var fancyTitleContent= 'Step 1. Choose Your Wedding Style'; %>
-<%- include partials/fancy-title.ejs %>
-
-<div class="row">
-  <% var filterImageTitle= 'Simple & Elegant'; %>
-  <%- include partials/filter-image.ejs %>
-
-  <% var filterImageTitle= 'Black & White Affair'; %>
-  <%- include partials/filter-image.ejs %>
-
-  <% var filterImageTitle= 'Luxury & Wine'; %>
-  <%- include partials/filter-image.ejs %>
+                <a href="order.html" class="btn btn-inverse go-slide animated" data-animation="fadeIn" data-animation-delay="60" data-slide="subscribe">Order Now for $49</a>
+                <a href="faq.html" class="btn go-slide animated" data-animation="fadeIn" data-animation-delay="60" data-slide="subscribe">FAQ</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 <%- include partials/page-end.ejs %>

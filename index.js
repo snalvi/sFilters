@@ -29,8 +29,12 @@ app.get('/price.html', function (req, res) {
   res.render('price');
 });
 
-app.get('/contact.html', function (req, res) {
-  res.render('contact');
+app.get('/faq.html', function (req, res) {
+  res.render('faq');
+});
+
+app.get('/order.html', function (req, res) {
+  res.render('order');
 });
 
 app.get('/order-complete.html', function (req, res) {
@@ -55,7 +59,7 @@ app.post('/order-submit', function (req, res) {
     to: 'snapchatgeof@gmail.com',
     subject: 'Order from ' + req.body.name,
     replyTo: req.body.email,
-    text: req.body.comment
+    text: req.body.message
   };
 
   smtpTrans.sendMail(mailOpts, function (error, response) {

@@ -1,0 +1,38 @@
+<% var websiteTitle= 'Order - SnapWedding'; %>
+<%- include partials/page-start.ejs %>
+
+<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 faq text-left">
+    <p>Get your amazing Snapchat Geo-Filter by filling the form and sending it to us. One of our designers will contact you with questions about your personal preferences and wedding colors. They will also send you payment information.</p>
+
+    <form id="contact-form" class="contact-form" action="/order-submit" method="post">
+        <div class="row">
+            <div class="col-12" data-animation="fadeIn" data-animation-delay="200">
+                <input type="text" name="name" placeholder="Name"
+                       class="contact-form-name required">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12" data-animation="fadeIn" data-animation-delay="200">
+                <input type="email" name="email" placeholder="Email"
+                       class="contact-form-email required">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12" data-animation="fadeIn" data-animation-delay="200">
+                <textarea name="message" placeholder="Message"
+                        class="contact-form-message required"
+                        rows="4"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12" data-animation="fadeIn" data-animation-delay="200">
+                <button class="btn btn-block btn-inverse" type="submit" id="" name="submit">
+                  <i class="fa fa-send"></i> <span>Submit Order</span>
+                </button>
+            </div>
+        </div>
+        <div class="contact-notice"></div>
+    </form>
+</div>
+
+<%- include partials/page-end.ejs %>
