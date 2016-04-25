@@ -1581,7 +1581,14 @@ Responsive text align
 Custom CSS
 ====================================================*/
 body {
+    background: url(../img/background-pattern.png) repeat;
+}
+
+.bg-home {
+    min-height: 100%;
     padding: 40px;
+    background-color: rgba(255, 235, 59, 0.7); /*#FFEB3B*/
+    color: #252525;
 }
 
 h2 {
