@@ -3,13 +3,17 @@ var bodyParser  = require('body-parser');
 var xmlparser   = require('express-xml-bodyparser');
 var request     = require('request');
 var url         = require('url');
-var gzippo      = require('gzippo');
+var path        = require('path');
+var compression = require('compression');
 var nodemailer  = require('nodemailer');
 
 var app = express();
 
 app.set('views', './views');
 app.set('view engine', 'ejs');
+
+app.use(compression()); //use compression 
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -63,7 +67,7 @@ app.post('/order-submit', function (req, res) {
       res.redirect('../order-complete.html');
     }, 
     function(err) {
-      console.log("ERROR!!!!");
+      console.log("ERROR!!!! " + err);
       res.redirect('../order-error.html');
     })
 });
@@ -74,13 +78,12 @@ app.post('/send-message', function (req, res) {
       res.redirect('../contact-success.html');
     }, 
     function(err) {
-      console.log("ERROR!!!!");
+      console.log("ERROR!!!! " + err);
       res.redirect('../contact-error.html');
     })
 });
 
 app.listen(process.env.PORT || 9000);
-app.use(gzippo.staticGzip( __dirname + '/public'));
 
 function sendEmail(res, email, message, subject, successCallback, errorCallback) {
   var smtpTrans = nodemailer.createTransport({
