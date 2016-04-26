@@ -4,7 +4,7 @@
   "description": "snapchat filters",
   "main": "index.js",
   "scripts": {
-    "postinstall": "gulp setup"
+    "postinstall": "gulp production"
   },
   "author": "",
   "license": "UNLICENSED",

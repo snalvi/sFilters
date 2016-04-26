@@ -31,6 +31,13 @@ gulp.task('cleanImages', function() {
 gulp.task('images', ['cleanImages'], function() {
   return gulp.src(paths.images)
     // Pass in options to the task 
+    .pipe(imagemin({optimizationLevel: 1}))
+    .pipe(gulp.dest('public/assets/img'));
+});
+
+gulp.task('imagesProduction', ['cleanImages'], function() {
+  return gulp.src(paths.images)
+    // Pass in options to the task 
     .pipe(imagemin({optimizationLevel: 5}))
     .pipe(gulp.dest('public/assets/img'));
 });
@@ -44,4 +51,4 @@ gulp.task('watch', function() {
 // The default task (called when you run `gulp` from cli) 
 gulp.task('default', ['watch', 'css', 'images']);
 
-gulp.task('setup', ['css', 'images']);
+gulp.task('production', ['css', 'imagesProduction']);
