@@ -38,7 +38,7 @@ gulp.task('images', ['cleanImages'], function() {
 gulp.task('imagesProduction', ['cleanImages'], function() {
   return gulp.src(paths.images)
     // Pass in options to the task 
-    .pipe(imagemin({optimizationLevel: 5}))
+    .pipe(imagemin({optimizationLevel: 4}))
     .pipe(gulp.dest('public/assets/img'));
 });
  
