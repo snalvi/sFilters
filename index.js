@@ -29,10 +29,6 @@ app.get('/index.html', function (req, res) {
   res.render('index');
 });
 
-app.get('/price.html', function (req, res) {
-  res.render('price');
-});
-
 app.get('/faq.html', function (req, res) {
   res.render('faq');
 });
