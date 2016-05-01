@@ -86,7 +86,7 @@ function sendEmail(res, email, message, subject, successCallback, errorCallback)
     service: 'gmail',
     auth: {
       user: "snapchatgeof@gmail.com",
-      pass: "AsdfAsdf" 
+      pass: "" 
     }
   });
 
