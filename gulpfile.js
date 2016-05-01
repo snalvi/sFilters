@@ -10,7 +10,8 @@ var del = require('del');
  
 var paths = {
   css: 'css/**/*.css',
-  images: 'img/**/*'
+  images: 'img/**/*',
+  fonts: 'css/fonts/**/*.*'
 };
  
 gulp.task('cleanCss', function() {
@@ -22,6 +23,11 @@ gulp.task('css', ['cleanCss'], function() {
     .pipe(minifyCSS())
     .pipe(concat('style.css'))
     .pipe(gulp.dest('public/assets/css'))
+});
+
+gulp.task('fonts', function() {
+  gulp.src(paths.fonts)
+    .pipe(gulp.dest('public/assets/fonts'))
 });
  
 gulp.task('cleanImages', function() {
@@ -49,6 +55,6 @@ gulp.task('watch', function() {
 });
  
 // The default task (called when you run `gulp` from cli) 
-gulp.task('default', ['watch', 'css', 'images']);
+gulp.task('default', ['watch', 'css', 'images', 'fonts']);
 
 gulp.task('production', ['css', 'imagesProduction']);
