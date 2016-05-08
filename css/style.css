@@ -700,6 +700,10 @@ strong {
     letter-spacing: 1px;
 }
 
+p > a {
+    text-decoration: underline;
+}
+
 /* Subscribe */
 
 .subscribe-form {
