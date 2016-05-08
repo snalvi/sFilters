@@ -11,7 +11,7 @@ var del = require('del');
 var paths = {
   css: 'css/**/*.css',
   images: 'img/**/*',
-  fonts: 'css/fonts/**/*.*'
+  fonts: 'fonts/**/*.*'
 };
  
 gulp.task('cleanCss', function() {
