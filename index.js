@@ -85,13 +85,13 @@ function sendEmail(res, email, message, subject, successCallback, errorCallback)
   var smtpTrans = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: "snapchatgeof@gmail.com",
-      pass: "" 
+      user: process.env.email,
+      pass: process.env.emailPassword
     }
   });
 
   var mailOpts = {
-    to: 'snapchatgeof@gmail.com',
+    to: process.env.email,
     subject: subject,
     replyTo: email,
     text: message
