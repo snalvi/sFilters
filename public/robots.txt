@@ -1,2 +1,5 @@
 User-agent: *
-Disallow:
+Disallow: /order.html
+
+User-agent: *
+Disallow: /contact.html
