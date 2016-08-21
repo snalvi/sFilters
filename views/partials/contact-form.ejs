@@ -1,0 +1,30 @@
+<form id="contact-form" class="contact-form" action="/<%= contactFormAction %>" method="post">
+    <div class="row">
+        <div class="col-12" data-animation="fadeIn" data-animation-delay="200">
+            <input type="text" name="name" placeholder="Name"
+                   class="contact-form-name required">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12" data-animation="fadeIn" data-animation-delay="200">
+            <input type="email" name="email" placeholder="Email"
+                   class="contact-form-email required">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12" data-animation="fadeIn" data-animation-delay="200">
+            <textarea name="message" placeholder="Message"
+                    class="contact-form-message required"
+                    rows="4"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12" data-animation="fadeIn" data-animation-delay="200">
+            <button class="btn btn-block btn-inverse" type="submit" id="" name="submit">
+                <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+                Send Message
+            </button>
+        </div>
+    </div>
+    <div class="contact-notice"></div>
+</form>

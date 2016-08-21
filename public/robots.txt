@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /order.html
+
+User-agent: *
+Disallow: /contact.html

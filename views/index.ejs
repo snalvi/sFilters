@@ -1,0 +1,31 @@
+<% var websiteTitle= ''; %>
+<%- include partials/page-start.ejs %>
+
+<div class="svm  col-sm-offset-0 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-4 hidden-xs svm text-right">
+            <%- include partials/iphone-scroller.ejs %>
+        </div>
+        <div class="col-sm-6 svm">
+            <div class="text-left text-xs-center text-sm-left">
+                <!-- START TITLE -->
+                <h2 class="text-default animated" data-animation="fadeIn" data-animation-delay="50">
+                    Show the world your Special Day!
+                </h2>
+                <!-- END TITLE -->
+                <p class="animated" data-animation="fadeIn" data-animation-delay="55">
+                    Make your wedding even more fun and special! Have friends & family share snaps of your wedding with Snapchat wedding filters!
+                </p>
+
+                <div class="visible-xs">
+                    <%- include partials/iphone-scroller.ejs %>
+                </div>
+
+                <a href="order.html" class="btn btn-inverse animated" data-animation="fadeIn" data-animation-delay="60" data-slide="subscribe">Order Now for $49</a>
+                <a href="faq.html" class="btn animated" data-animation="fadeIn" data-animation-delay="60" data-slide="subscribe">FAQ</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include partials/page-end.ejs %>
